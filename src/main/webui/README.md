@@ -59,3 +59,34 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+## Installation
+```sh
+npm create vue@latest                                                                                                                           1 ✘  1m 43s  15:45:46
+
+> npx
+> create-vue
+
+
+Vue.js - The Progressive JavaScript Framework
+
+✔ Project name: … de.mkallfass.tools.minipos
+✔ Add TypeScript? … No / Yes
+✔ Add JSX Support? … No / Yes
+✔ Add Vue Router for Single Page Application development? … No / Yes
+✔ Add Pinia for state management? … No / Yes
+✔ Add Vitest for Unit Testing? … No / Yes
+✔ Add an End-to-End Testing Solution? › Cypress
+✔ Add ESLint for code quality? … No / Yes
+✔ Add Prettier for code formatting? … No / Yes
+✔ Add Vue DevTools 7 extension for debugging? (experimental) … No / Yes
+
+Scaffolding project in /Users/matthias.kallfass/Privat/Documents/git/misc/de.mkallfass.tools.minipos/src/main/webui/de.mkallfass.tools.minipos...
+
+Done. Now run:
+
+  cd de.mkallfass.tools.minipos
+  npm install
+  npm run format
+  npm run dev
+```
