@@ -1,0 +1,19 @@
+#Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+setup.ps1
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
