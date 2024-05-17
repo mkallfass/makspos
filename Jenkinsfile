@@ -2,7 +2,7 @@
 import defaultQuarkusBuild
 
 defaultQuarkusBuild {
-    buildDockerImage = false
+    buildDockerImage = true
     skipTests = false
     additionalNotificationsTo = 'me@mkallfass.de'
 }
