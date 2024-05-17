@@ -1,8 +1,11 @@
 <template>
   <main>
     <Splitter>
+      <SplitterPanel>
+        <Products></Products>
+      </SplitterPanel>
       <SplitterPanel class="flex align-items-center justify-content-center">
-        <Card class="my-2">
+        <Card>
           <template #title>
             This is an about page
           </template>
@@ -13,15 +16,12 @@
           </template>
           <template #footer>
             <div class="flex gap-2">
-              <Button label="Open Dialog" @click="display = !display"/>
-              <Button label="Open Dialog" class="p-button-primary" @click="display = !display"/>
-              <Button label="Open Dialog" class="p-button-secondary" @click="display = !display"/>
+              <Button label="Open Dialog" @click="display = !display" />
+              <Button class="p-button-primary" label="Open Dialog" @click="display = !display" />
+              <Button class="p-button-secondary" label="Open Dialog" @click="display = !display" />
             </div>
           </template>
         </Card>
-      </SplitterPanel>
-      <SplitterPanel class="flex align-items-center justify-content-center">
-        Panel 2
       </SplitterPanel>
     </Splitter>
 
@@ -33,6 +33,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import Products from "@/components/Products.vue";
+import { ref } from "vue";
+
 const display = ref(false)
 </script>
