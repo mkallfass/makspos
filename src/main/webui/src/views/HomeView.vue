@@ -2,7 +2,7 @@
   <main>
     <Splitter>
       <SplitterPanel>
-        <Products></Products>
+        <ProductList />
       </SplitterPanel>
       <SplitterPanel class="flex align-items-center justify-content-center">
         <Card>
@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import Products from "@/components/Products.vue";
+import ProductList from "@/components/ProductList.vue";
 import { ref } from "vue";
 
 const display = ref(false)

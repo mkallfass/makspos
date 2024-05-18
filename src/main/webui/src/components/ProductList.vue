@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useProductStore } from "@/stores/products";
+import { useProductStore } from "@/stores/product";
 
 const productStore = useProductStore()
 
