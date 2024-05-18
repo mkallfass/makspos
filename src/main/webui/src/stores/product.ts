@@ -1,11 +1,5 @@
 import { defineStore } from 'pinia'
-
-interface Product {
-  id: number
-  name: string
-  detail: string
-  price: number
-}
+import type { Product } from "@/models/product.model";
 
 interface State {
   products: Product[]
