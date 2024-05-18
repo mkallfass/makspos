@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia'
-import type { Product } from "@/models/product.model";
+import { defineStore } from "pinia";
+import type { ProductSelection } from "@/models/product.model";
 
 interface State {
-  products: Product[]
+  products: ProductSelection[];
 }
 
 export const useProductStore = defineStore('productStore', {
@@ -37,7 +37,7 @@ export const useProductStore = defineStore('productStore', {
           { id: 2015, name: "Apfelsaftschorle", detail: "0,5l Flasche", price: 2 },
           { id: 2016, name: "Mineralwasser", detail: "0,5l Flasche", price: 2 },
           { id: 2017, name: "Kaffee", detail: "Tasse", price: 1.5 }
-        ] as Product[]
+        ] as ProductSelection[]
     }
   }
 })

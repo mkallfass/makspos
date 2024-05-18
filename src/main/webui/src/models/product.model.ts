@@ -4,3 +4,8 @@ export interface Product {
   detail: string
   price: number
 }
+
+export interface ProductSelection extends Product {
+  quantity: number;
+}
+
