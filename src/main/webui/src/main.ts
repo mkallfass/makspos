@@ -13,9 +13,7 @@ import Card from "primevue/card";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import InputNumber from "primevue/inputnumber";
-import Dialog from "primevue/dialog";
 import Button from "primevue/button";
-import InputText from "primevue/inputtext";
 
 import "./assets/main.css";
 import "primevue/resources/themes/aura-light-green/theme.css";
@@ -38,8 +36,6 @@ app.component("DataTable", DataTable);
 app.component("Column", Column);
 app.component("InputNumber", InputNumber);
 app.component("Toast", Toast);
-app.component('Dialog', Dialog)
 app.component('Button', Button)
-app.component('InputText', InputText)
 
 app.mount('#app')

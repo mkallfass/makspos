@@ -18,7 +18,7 @@ export const usePosStore = defineStore("posStore", {
     cartLineItems(state) {
       // Calculate line item
       let cartTotal: number = 0
-      for (let l of state.products) {
+      for (const l of state.products) {
         if (l.quantity) {
           l.total = l.quantity * l.price
           cartTotal = cartTotal + l.total
