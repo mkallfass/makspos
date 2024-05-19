@@ -6,6 +6,6 @@ defaultQuarkusBuild {
     imageName = 'docker-registry.mkallfass.de/de.mkallfass.tools.minipos'
     imageTag = 'latest'
     useGitTag = true
+    buildNative = false
     skipTests = false
-    additionalNotificationsTo = 'me@mkallfass.de'
 }
