@@ -4,7 +4,7 @@
       Bestellung
     </template>
     <template #content>
-      <DataTable :value="cartStore.lineItems.values()" showGridlines stripedRows>
+      <DataTable :value="cartLineItems" showGridlines stripedRows>
         <Column field="quantity" header="Anzahl" style="width: 10%" />
         <Column field="name" header="Position" style="width: 70%">
           <template #body="slotProps">
@@ -22,7 +22,7 @@
           </template>
         </Column>
         <template #footer>
-          <div class="p-card-title">Summe {{ formatCurrency(cartStore.total) }}</div>
+          <div class="p-card-title">Summe {{ formatCurrency(posStore.total) }}</div>
         </template>
       </DataTable>
     </template>
@@ -30,13 +30,11 @@
 </template>
 
 <script lang="ts" setup>
-import { useCartStore } from "@/stores/cart";
 import { storeToRefs } from "pinia";
+import { usePosStore } from "@/stores/pos.store";
+import { formatCurrency } from "@/utils";
 
-const cartStore = useCartStore()
-
-const formatCurrency = (value : any) => {
-  return value.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })
-}
+const posStore = usePosStore()
+const { cartLineItems } = storeToRefs(posStore)
 </script>
 

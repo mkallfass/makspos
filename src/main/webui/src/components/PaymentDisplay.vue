@@ -4,25 +4,23 @@
       Bezahlung
     </template>
     <template #content>
-      <div class="p-card-title">
-        Bezahlt
-        <InputNumber mode="currency" currency="EUR" locale="de-DE">
+      <div class="p-column-title">
+        <strong>Bezahlt</strong>
+        <InputNumber v-model="posStore.givenAmount" mode="currency" currency="EUR" locale="de-DE">
         </InputNumber>
       </div>
-      <div class="p-card-title">
-        Rückgeld
+      <div class="p-column-title">
+        <p><strong>Rückgeld</strong> {{ returnAmount }}</p>
       </div>
     </template>
   </Card>
 </template>
 
 <script lang="ts" setup>
-import { useCartStore } from "@/stores/cart";
+import { storeToRefs } from "pinia";
+import { usePosStore } from "@/stores/pos.store";
 
-const cartStore = useCartStore()
-
-const formatCurrency = (value : any) => {
-  return value.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })
-}
+const posStore = usePosStore()
+const { returnAmount } = storeToRefs(posStore)
 </script>
 

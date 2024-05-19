@@ -9,3 +9,6 @@ export interface ProductSelection extends Product {
   quantity: number;
 }
 
+export interface LineItem extends ProductSelection{
+  total: number
+}

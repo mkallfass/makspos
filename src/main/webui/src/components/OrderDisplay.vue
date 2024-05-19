@@ -2,21 +2,20 @@
   <Card>
     <template #content>
       <div class="flex align-items-end justify-content-end">
-        <Button label="Stornieren" severity="secondary" @click="display = !display" />
-        <Button label="Abschließen" @click="display = !display" />
+        <Button label="Stornieren" severity="secondary"  />
+        <Button label="Abschließen"  />
       </div>
     </template>
   </Card>
 
-  <Dialog header="Header" v-model:visible="display" >
-    <Button class="p-button-info p-button-sm" label="Close" @click="display = !display"/>
-  </Dialog>
 
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+// @click="posStore.reset()"
+// @click="posStore.order()"
+import { usePosStore } from "@/stores/pos.store";
 
-const display = ref(false)
+const posStore = usePosStore()
 </script>
 
