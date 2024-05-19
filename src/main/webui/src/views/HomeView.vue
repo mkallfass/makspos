@@ -1,10 +1,10 @@
 <template>
   <main>
     <div class="grid" >
-      <div class="col-7">
+      <div class="col-7 sm:col-12 md:col-12 lg:col-7 xl:col-7">
         <ProductList />
       </div>
-      <div class="col-5">
+      <div class="col-5 sm:col-12 md:col-12 lg:col-5 xl:col-5">
         <CartDisplay />
         <PaymentDisplay />
         <OrderDisplay />
