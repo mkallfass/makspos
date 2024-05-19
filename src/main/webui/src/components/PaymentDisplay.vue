@@ -1,16 +1,16 @@
 <template>
   <Card>
     <template #title>
-      Bezahlung
+      <div class="surface-ground">Bezahlung</div>
     </template>
     <template #content>
-      <div class="p-column-title">
-        <strong>Bezahlt</strong>
-        <InputNumber v-model="posStore.givenAmount" mode="currency" currency="EUR" locale="de-DE">
-        </InputNumber>
-      </div>
-      <div class="p-column-title">
-        <p><strong>Rückgeld</strong> {{ returnAmount }}</p>
+      <div class="grid font-bold text-xl">
+        <div class="col-6">Bezahlt</div>
+        <div class="col-3 col-offset-3">
+          <InputNumber v-model="posStore.givenAmount" mode="currency" currency="EUR" locale="de-DE" inputClass="font-bold text-xl" inputStyle="width: 100%;text-align:right;" />
+        </div>
+        <div class="col-6">Rückgeld</div>
+        <div class="col-6" style="text-align: right">{{ returnAmount }}</div>
       </div>
     </template>
   </Card>

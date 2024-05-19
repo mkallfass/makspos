@@ -1,20 +1,20 @@
 <template>
     <DataTable :value="posStore.products" showGridlines stripedRows>
-      <Column field="name" header="Speisen und Getränke" style="width: 50%">
+      <Column field="name" header="Speisen und Getränke">
         <template #body="slotProps">
           {{ slotProps.data.name }} <small>{{ slotProps.data.detail }}</small>
         </template>
       </Column>
-      <Column field="price" header="Preis" style="width: 10%">
+      <Column field="price" header="Preis">
         <template #body="slotProps">
-          {{ formatCurrency(slotProps.data.price) }}
+          <div style="text-align:right;">{{ formatCurrency(slotProps.data.price) }}</div>
         </template>
       </Column>
-      <Column header="Auswahl" style="width: 40%">
+      <Column header="Auswahl">
         <template #body="slotProps">
           <InputNumber v-model="slotProps.data.quantity" :max="99" :min="0" buttonLayout="horizontal"
                        @input="quantityChanged(slotProps.data)"
-                       showButtons >
+                       showButtons inputStyle="width: 3rem;text-align:center;">
             <template #incrementbuttonicon>
               <span class="pi pi-plus" />
             </template>

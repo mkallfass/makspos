@@ -1,9 +1,13 @@
 <template>
   <Card>
     <template #content>
-      <div class="flex align-items-end justify-content-end">
-        <Button label="Stornieren" severity="secondary" @click="posStore.reset()" />
-        <Button label="Abschließen" @click="posStore.order()" />
+      <div class="grid ">
+        <div class="col-3 col-offset-6">
+          <Button label="Stornieren" severity="secondary" @click="posStore.reset()" style="width: 100%" />
+        </div>
+        <div class="col-3">
+          <Button label="Abschließen" @click="posStore.order()" style="width: 100%" />
+        </div>
       </div>
     </template>
   </Card>

@@ -1,28 +1,31 @@
 <template>
   <Card>
     <template #title>
-      Bestellung
+      <div class="surface-ground">Bestellung</div>
     </template>
     <template #content>
       <DataTable :value="cartLineItems" showGridlines stripedRows>
         <Column field="quantity" header="Anzahl" style="width: 10%" />
         <Column field="name" header="Position" style="width: 70%">
           <template #body="slotProps">
-            {{ slotProps.data.name }} <small>{{ slotProps.data.detail }}</small>
+            {{ slotProps.data.name }}
           </template>
         </Column>
         <Column field="price" header="Einzelpreis" style="width: 10%">
           <template #body="slotProps">
-            {{ formatCurrency(slotProps.data.price) }}
+            <div style="text-align:right;">{{ formatCurrency(slotProps.data.price) }}</div>
           </template>
         </Column>
         <Column field="total" header="Summe" style="width: 10%">
           <template #body="slotProps">
-            {{ formatCurrency(slotProps.data.total) }}
+            <div style="text-align:right;">{{ formatCurrency(slotProps.data.total) }}</div>
           </template>
         </Column>
         <template #footer>
-          <div class="p-card-title">Summe {{ formatCurrency(posStore.total) }}</div>
+          <div class="grid font-bold text-xl">
+            <div class="col"> Summe</div>
+            <div class="col" style="text-align: right">{{ formatCurrency(posStore.total) }}</div>
+          </div>
         </template>
       </DataTable>
     </template>

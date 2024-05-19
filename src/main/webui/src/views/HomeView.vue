@@ -1,15 +1,15 @@
 <template>
   <main>
-    <Splitter>
-      <SplitterPanel :size="60">
+    <div class="grid" >
+      <div class="col-7">
         <ProductList />
-      </SplitterPanel>
-      <SplitterPanel :minSize="10" :size="40">
+      </div>
+      <div class="col-5">
         <CartDisplay />
         <PaymentDisplay />
         <OrderDisplay />
-      </SplitterPanel>
-    </Splitter>
+      </div>
+    </div>
   </main>
 </template>
 
