@@ -4,9 +4,13 @@
       Bezahlung
     </template>
     <template #content>
-    </template>
-    <template #footer>
-      <div>
+      <div class="p-card-title">
+        Bezahlt
+        <InputNumber mode="currency" currency="EUR" locale="de-DE">
+        </InputNumber>
+      </div>
+      <div class="p-card-title">
+        Rückgeld
       </div>
     </template>
   </Card>

@@ -1,8 +1,9 @@
 <template>
   <Card>
     <template #content>
-      <div class="flex justify-content-end">
-        <Button label="Open Dialog" @click="display = !display" />
+      <div class="flex align-items-end justify-content-end">
+        <Button label="Stornieren" severity="secondary" @click="display = !display" />
+        <Button label="Abschließen" @click="display = !display" />
       </div>
     </template>
   </Card>

@@ -21,16 +21,10 @@
             {{ formatCurrency(slotProps.data.total) }}
           </template>
         </Column>
-      </DataTable>
-      <Card>
-        <template #title>
-          Summe {{ formatCurrency(cartStore.total) }}
+        <template #footer>
+          <div class="p-card-title">Summe {{ formatCurrency(cartStore.total) }}</div>
         </template>
-      </Card>
-    </template>
-    <template #footer>
-      <div>
-      </div>
+      </DataTable>
     </template>
   </Card>
 </template>
