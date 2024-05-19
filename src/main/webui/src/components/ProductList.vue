@@ -16,7 +16,7 @@
             <div class="justify-content-center">
               <InputNumber v-model="slotProps.data.quantity" :max="99" :min="0" buttonLayout="horizontal"
                            @input="quantityChanged(slotProps.data)"
-                           showButtons inputStyle="width: 3rem;text-align:center;">
+                           showButtons :inputStyle="{'width': '3rem', 'text-align': 'center'}">
                 <template #incrementbuttonicon>
                   <span class="pi pi-plus" />
                 </template>
