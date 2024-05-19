@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { LineItem, ProductSelection } from "@/models/pos.model";
+import type { LineItem } from "@/models/pos.model";
 import { PRODUCTS } from "@/data/products";
 import { formatCurrency } from "@/utils";
 
@@ -11,7 +11,7 @@ interface State {
 
 export const usePosStore = defineStore("posStore", {
   state: (): State => ({
-    products: PRODUCTS,
+    products: structuredClone(PRODUCTS),
     total: 0
   } as State),
   getters: {
@@ -42,7 +42,7 @@ export const usePosStore = defineStore("posStore", {
       this.reset()
     },
     reset() {
-      this.products = PRODUCTS
+      this.products = structuredClone(PRODUCTS);
       this.total = 0
       this.givenAmount = 0
     }

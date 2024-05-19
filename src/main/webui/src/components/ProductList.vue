@@ -13,6 +13,7 @@
       <Column header="Auswahl" style="width: 40%">
         <template #body="slotProps">
           <InputNumber v-model="slotProps.data.quantity" :max="99" :min="0" buttonLayout="horizontal"
+                       @input="quantityChanged(slotProps.data)"
                        showButtons >
             <template #incrementbuttonicon>
               <span class="pi pi-plus" />
@@ -27,7 +28,6 @@
 </template>
 
 <script lang="ts" setup>
-// @input="quantityChanged(slotProps.data)"
 import type { LineItem } from "@/models/pos.model";
 import { usePosStore } from "@/stores/pos.store";
 import { formatCurrency } from "@/utils";
