@@ -165,12 +165,14 @@
                 <version>${kotlin.version}</version>
                 <executions>
                     <execution>
+                        <?m2e execute onConfiguration,onIncremental?>
                         <id>compile</id>
                         <goals>
                             <goal>compile</goal>
                         </goals>
                     </execution>
                     <execution>
+                        <?m2e execute onConfiguration,onIncremental?>
                         <id>test-compile</id>
                         <goals>
                             <goal>test-compile</goal>
