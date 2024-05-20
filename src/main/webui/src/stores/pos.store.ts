@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import type { LineItem } from "@/models/pos.model";
 import { PRODUCTS } from "@/data/products";
+import { useConfigStore } from "@/stores/config.store";
 import { formatCurrency } from "@/utils";
 
 interface State {
@@ -33,7 +34,7 @@ export const usePosStore = defineStore("posStore", {
     },
     returnAmount(state) {
       if (state.givenAmount > 0) {
-        return formatCurrency(state.givenAmount - state.total)
+        return formatCurrency(state.givenAmount - state.total, useConfigStore())
       }
     }
   },

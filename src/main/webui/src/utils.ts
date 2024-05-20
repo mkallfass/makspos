@@ -1,3 +1,5 @@
-export const formatCurrency = (value : any) => {
-  return value.toLocaleString('de-DE', { style: 'currency', currency: 'EUR' })
+import type { Config } from "@/models/config.model";
+
+export const formatCurrency = (value : any, config : Config) => {
+  return value.toLocaleString(config.locale, { style: 'currency', currency: config.currency })
 }

@@ -3,7 +3,7 @@
     <!-- Header -->
     <Toolbar>
       <template #center>
-        <div class="font-bold text-xl">Mini POS</div>
+        <div class="font-bold text-xl">{{ configStore.title }}</div>
       </template>
     </Toolbar>
 
@@ -15,7 +15,7 @@
     <!-- Footer -->
     <Toolbar>
       <template #center>
-        <div>Made with ♥️ in Baiersbronn, Germany</div>
+        <div>{{ configStore.footer }}</div>
       </template>
     </Toolbar>
   </div>
@@ -23,6 +23,9 @@
 
 <script setup lang="ts">
 import { RouterView } from "vue-router";
+import { useConfigStore } from "@/stores/config.store";
+
+const configStore = useConfigStore();
 </script>
 
 <style>

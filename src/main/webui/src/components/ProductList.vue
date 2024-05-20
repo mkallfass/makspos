@@ -7,7 +7,7 @@
       </Column>
       <Column field="price" header="Preis">
         <template #body="slotProps">
-          <div style="text-align:right;">{{ formatCurrency(slotProps.data.price) }}</div>
+          <div style="text-align:right;">{{ formatCurrency(slotProps.data.price, configStore) }}</div>
         </template>
       </Column>
       <Column header="Auswahl">
@@ -33,9 +33,11 @@
 
 <script lang="ts" setup>
 import type { LineItem } from "@/models/pos.model";
+import { useConfigStore } from "@/stores/config.store";
 import { usePosStore } from "@/stores/pos.store";
 import { formatCurrency } from "@/utils";
 
+const configStore = useConfigStore();
 const posStore = usePosStore()
 
 const quantityChanged = (product: LineItem) => {

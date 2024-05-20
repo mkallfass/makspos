@@ -13,18 +13,18 @@
         </Column>
         <Column field="price" header="Einzelpreis" style="width: 10%">
           <template #body="slotProps">
-            <div style="text-align:right;">{{ formatCurrency(slotProps.data.price) }}</div>
+            <div style="text-align:right;">{{ formatCurrency(slotProps.data.price, configStore) }}</div>
           </template>
         </Column>
         <Column field="total" header="Summe" style="width: 10%">
           <template #body="slotProps">
-            <div style="text-align:right;">{{ formatCurrency(slotProps.data.total) }}</div>
+            <div style="text-align:right;">{{ formatCurrency(slotProps.data.total, configStore) }}</div>
           </template>
         </Column>
         <template #footer>
           <div class="grid font-bold text-xl">
             <div class="col"> Summe</div>
-            <div class="col" style="text-align: right">{{ formatCurrency(posStore.total) }}</div>
+            <div class="col" style="text-align: right">{{ formatCurrency(posStore.total, configStore) }}</div>
           </div>
         </template>
       </DataTable>
@@ -34,9 +34,11 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
+import { useConfigStore } from "@/stores/config.store";
 import { usePosStore } from "@/stores/pos.store";
 import { formatCurrency } from "@/utils";
 
+const configStore = useConfigStore();
 const posStore = usePosStore()
 const { cartLineItems } = storeToRefs(posStore)
 </script>
