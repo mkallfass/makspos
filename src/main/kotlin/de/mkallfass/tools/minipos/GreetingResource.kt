@@ -1,4 +1,4 @@
-package de.mkallfass.tools
+package de.mkallfass.tools.minipos
 
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path

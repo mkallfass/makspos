@@ -1,4 +1,4 @@
-package de.mkallfass.tools
+package de.mkallfass.tools.minipos
 
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
