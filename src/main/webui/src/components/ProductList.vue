@@ -2,7 +2,7 @@
     <DataTable :value="posStore.products" showGridlines stripedRows>
       <Column field="name" header="Speisen und Getränke">
         <template #body="slotProps">
-          {{ slotProps.data.name }} <small>{{ slotProps.data.detail }}</small>
+          {{ slotProps.data.name }} <small>{{ slotProps.data.description }}</small>
         </template>
       </Column>
       <Column field="price" header="Preis">
