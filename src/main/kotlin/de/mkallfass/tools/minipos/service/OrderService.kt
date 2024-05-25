@@ -39,8 +39,7 @@ class OrderService {
                 i.name = p.name
                 i.description = p.description
                 i.price = p.price
-            }
-            else {
+            } else {
                 throw IllegalArgumentException("LineItem id ${i.id} is not a valid product id")
             }
             val lineItemTotal = i.quantity * i.price!!
