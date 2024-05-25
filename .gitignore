@@ -1,3 +1,6 @@
+# App
+/data/orders.jsonl
+
 #Maven
 target/
 pom.xml.tag
