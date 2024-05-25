@@ -1,3 +1,21 @@
+### Create minimum order
+POST {{base_url}}/api/orders
+Accept: application/json
+Content-Type: application/json
+
+{
+  "lineitems": [
+    {
+      "id": "1001",
+      "quantity": 5
+    },
+    {
+      "id": "2010",
+      "quantity": 3.5
+    }
+  ]
+}
+
 ### Create order
 POST {{base_url}}/api/orders
 Accept: application/json

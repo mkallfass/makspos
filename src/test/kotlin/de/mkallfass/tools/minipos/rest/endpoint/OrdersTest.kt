@@ -13,8 +13,8 @@ class OrdersTest {
     @Test
     fun testOrdersEndpoint() {
         val lineItems = listOf(
-            LineItem(id = "test-01", quantity = 4.5, price = 0.0),
-            LineItem(id = "test-02", quantity = 4.5, price = 1.0)
+            LineItem(id = "test-01", quantity = 4.5),
+            LineItem(id = "test-02", quantity = 4.5)
         )
         given()
             .contentType(ContentType.JSON)

@@ -15,9 +15,7 @@ class OrderService {
 
     fun create(order: Order): String? {
         Log.info("Order received: ${order}")
-        order.id = UUID.randomUUID().toString()
-        order.date = ZonedDateTime.now()
-        calculateOrder(order)
+        processOrder(order)
         orderRepository.add(order)
         Log.info("Order processed: ${order}")
         return order.id
@@ -27,10 +25,15 @@ class OrderService {
         return orderRepository.getAll()
     }
 
-    private fun calculateOrder(order: Order) {
+    private fun processOrder(order: Order) {
+        order.id = UUID.randomUUID().toString()
+        order.date = ZonedDateTime.now()
+
         var orderTotal = 0.0
         for (i in order.lineItems) {
-            i.price?.let { i.price = 0.0 }
+            if (i.price == null) {
+                i.price = 0.0
+            }
             val lineItemTotal = i.quantity * i.price!!
             i.total = lineItemTotal
             orderTotal += lineItemTotal
