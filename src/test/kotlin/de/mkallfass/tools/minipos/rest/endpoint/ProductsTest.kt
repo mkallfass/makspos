@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 @QuarkusTest
 class ProductsTest {
     @Test
-    fun testOrdersEndpoint() {
+    fun testProductsEndpoint() {
         // @formatter:off
         given()
         .`when`()
@@ -16,6 +16,8 @@ class ProductsTest {
         .then()
             .statusCode(200)
             .body(containsString("TEST-01"))
+            .body(containsString("TEST-02"))
+            .body(containsString("TEST-03"))
         // @formatter:on
     }
 }
