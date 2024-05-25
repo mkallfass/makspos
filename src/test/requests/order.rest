@@ -1,11 +1,11 @@
 ### Create order
-POST {{base_url}}/api/order
+POST {{base_url}}/api/orders
 Accept: application/json
 Content-Type: application/json
 
 {
   "lineitems": [
-    { "id": "1001", "name": "Steak", "description": "mit Brötchen", "price": 5 },
-    { "id": "2010", "name": "Topinambur", "description": "2cl", "price": 1.5 }
+    { "id": "1001", "name": "Steak", "description": "mit Brötchen", "quantity": 5, "price": 5 },
+    { "id": "2010", "name": "Topinambur", "description": "2cl", "quantity": 3.5, "price": 1.5 }
   ]
 }
