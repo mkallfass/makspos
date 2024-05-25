@@ -13,7 +13,7 @@ class OrderService {
     @Inject
     lateinit var orderRepository: OrderRepository
 
-    fun create(order: Order) : String? {
+    fun create(order: Order): String? {
         Log.info("Order received: ${order}")
         order.id = UUID.randomUUID().toString()
         order.date = ZonedDateTime.now()
