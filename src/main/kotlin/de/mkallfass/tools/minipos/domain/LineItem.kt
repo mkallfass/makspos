@@ -12,25 +12,10 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 data class LineItem(
-
-    @Schema(name = "id", required = true, description = "The id of the ordered product")
-    @Valid
-    @NotNull
-    @field:JsonProperty("id")
-    @NotBlank(message = "id may not be blank")
-    var id: String,
-
-    @Schema(name = "name", description = "The name of the ordered product")
-    @field:JsonProperty("name")
-    var name: String? = null,
-
-    @Schema(name = "description", description = "The description of the ordered product")
-    @field:JsonProperty("description")
-    var description: String? = null,
-
-    @Schema(name = "price", description = "The price of the ordered product")
-    @field:JsonProperty("price")
-    var price: Double? = null,
+    override var id: String,
+    override var name: String? = null,
+    override var description: String? = null,
+    override var price: Double? = null,
 
     @Schema(name = "quantity", required = true, description = "The quantity of the ordered product")
     @Valid
@@ -42,4 +27,4 @@ data class LineItem(
     @Schema(name = "total", description = "The total price of the ordered product")
     @field:JsonProperty("total")
     var total: Double? = null
-)
+) : Product(id = id, name = name, description = description, price = price)

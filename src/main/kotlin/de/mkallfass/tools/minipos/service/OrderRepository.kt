@@ -16,20 +16,35 @@ class OrderRepository {
     @ConfigProperty(name = "data.directory")
     lateinit var dataDirectory: String
 
-    @ConfigProperty(name = "order.repository.file")
-    lateinit var repositoryFile: String
+    @ConfigProperty(name = "order.repository")
+    lateinit var repository: String
+
+    lateinit var repoFile: File
 
     val mapper = ObjectMapper().registerKotlinModule().registerModule(JavaTimeModule())
 
     fun add(order: Order) {
-        repositoryFile().appendText(mapper.writeValueAsString(order) + System.lineSeparator())
+        getRepositoryFile().appendText(mapper.writeValueAsString(order) + System.lineSeparator())
     }
 
-    fun repositoryFile(): File {
-        val dataDirectoryPath = Paths.get(dataDirectory)
-        if (!Files.exists(dataDirectoryPath)) {
-            Files.createDirectories(dataDirectoryPath)
+    fun getAll(): List<Order> {
+        val orders = ArrayList<Order>()
+        getRepositoryFile().useLines { lines ->
+            lines.forEach {
+                orders.add(mapper.readValue(it, Order::class.java))
+            }
         }
-        return dataDirectoryPath.resolve(repositoryFile).toFile()
+        return orders
+    }
+
+    private fun getRepositoryFile(): File {
+        if (!this::repoFile.isInitialized) {
+            val dataDirectoryPath = Paths.get(dataDirectory)
+            if (!Files.exists(dataDirectoryPath)) {
+                Files.createDirectories(dataDirectoryPath)
+            }
+            repoFile = dataDirectoryPath.resolve(repository).toFile()
+        }
+        return repoFile
     }
 }

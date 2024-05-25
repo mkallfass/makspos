@@ -23,7 +23,11 @@ class OrderService {
         return order.id
     }
 
-    fun calculateOrder(order: Order) {
+    fun getAll(): List<Order> {
+        return orderRepository.getAll()
+    }
+
+    private fun calculateOrder(order: Order) {
         var orderTotal = 0.0
         for (i in order.lineItems) {
             i.price?.let { i.price = 0.0 }
