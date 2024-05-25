@@ -16,13 +16,15 @@ class OrdersTest {
             LineItem(id = "test-01", quantity = 4.5),
             LineItem(id = "test-02", quantity = 4.5)
         )
+        // @formatter:off
         given()
             .contentType(ContentType.JSON)
             .body(Order(lineItems = lineItems))
-            .`when`()
+        .`when`()
             .post("/api/orders")
-            .then()
+        .then()
             .statusCode(201)
             .body(containsString("\"id\":"))
+        // @formatter:on
     }
 }

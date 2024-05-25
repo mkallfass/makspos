@@ -1,5 +1,6 @@
 # App
 /data/orders.jsonl
+/src/test/resources/data/orders.jsonl
 
 #Maven
 target/

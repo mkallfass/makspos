@@ -13,6 +13,9 @@ class OrderService {
     @Inject
     lateinit var orderRepository: OrderRepository
 
+    @Inject
+    lateinit var productService: ProductService
+
     fun create(order: Order): String? {
         Log.info("Order received: ${order}")
         processOrder(order)
@@ -31,8 +34,14 @@ class OrderService {
 
         var orderTotal = 0.0
         for (i in order.lineItems) {
-            if (i.price == null) {
-                i.price = 0.0
+            val p = productService.getProductById(i.id)
+            if (p != null) {
+                i.name = p.name
+                i.description = p.description
+                i.price = p.price
+            }
+            else {
+                throw IllegalArgumentException("LineItem id ${i.id} is not a valid product id")
             }
             val lineItemTotal = i.quantity * i.price!!
             i.total = lineItemTotal

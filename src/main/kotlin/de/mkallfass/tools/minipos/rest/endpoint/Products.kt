@@ -1,10 +1,9 @@
 package de.mkallfass.tools.minipos.rest.endpoint
 
-import de.mkallfass.tools.minipos.domain.Product
 import de.mkallfass.tools.minipos.rest.model.Error
-import de.mkallfass.tools.minipos.rest.model.OrdersResponse
-import de.mkallfass.tools.minipos.rest.model.ProductsResponse
+import de.mkallfass.tools.minipos.service.ProductService
 import io.quarkus.logging.Log
+import jakarta.inject.Inject
 import jakarta.ws.rs.Consumes
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
@@ -12,6 +11,7 @@ import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response
 import org.eclipse.microprofile.openapi.annotations.Operation
+import org.eclipse.microprofile.openapi.annotations.enums.SchemaType
 import org.eclipse.microprofile.openapi.annotations.media.Content
 import org.eclipse.microprofile.openapi.annotations.media.Schema
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse
@@ -22,6 +22,8 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponses
 @Produces(MediaType.APPLICATION_JSON)
 class Products {
 
+    @Inject
+    lateinit var productService: ProductService
 
     @Operation(summary = "Get the list of products")
     @APIResponses(
@@ -32,7 +34,10 @@ class Products {
                 content = arrayOf(
                     Content(
                         mediaType = MediaType.APPLICATION_JSON,
-                        schema = Schema(implementation = ProductsResponse::class)
+                        schema = Schema(
+                            type = SchemaType.ARRAY,
+                            implementation = Products::class
+                        )
                     )
                 )
             ),
@@ -51,7 +56,8 @@ class Products {
     @GET
     fun getProducts(): Response {
         return try {
-            Response.ok().status(Response.Status.CREATED).entity(ProductsResponse(products = arrayListOf(Product(id = "id")) )).build()
+            val products = productService.getProductList()
+            Response.ok().entity(products).build()
         } catch (e: Exception) {
             Log.error("Error while getting products", e)
             Response.serverError()

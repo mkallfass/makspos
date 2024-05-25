@@ -1,0 +1,5 @@
+[
+  { "id": "TEST-01", "name": "Test01", "description": "Test01 Description", "price": 0.05 },
+  { "id": "TEST-02", "name": "Test02", "description": "Test02 Description", "price": 1.99 },
+  { "id": "TEST-03", "name": "Test03", "description": "Test03 Description", "price": 5 }
+]
