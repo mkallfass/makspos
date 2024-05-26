@@ -1,5 +1,6 @@
 package de.mkallfass.tools.minipos.rest.endpoint
 
+import de.mkallfass.tools.minipos.domain.Product
 import de.mkallfass.tools.minipos.rest.model.Error
 import de.mkallfass.tools.minipos.service.ProductService
 import io.quarkus.logging.Log
@@ -36,7 +37,7 @@ class Products {
                         mediaType = MediaType.APPLICATION_JSON,
                         schema = Schema(
                             type = SchemaType.ARRAY,
-                            implementation = Products::class
+                            implementation = Product::class
                         )
                     )
                 )
