@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import de.mkallfass.tools.minipos.domain.Product
+import io.quarkus.logging.Log
 import jakarta.enterprise.context.ApplicationScoped
 import org.eclipse.microprofile.config.inject.ConfigProperty
 import java.io.File
@@ -39,7 +40,9 @@ class ProducRepository {
     private fun ensureRepositoryLoaded() {
         if (!this::products.isInitialized) {
             val prod = mapper.readValue(getRepositoryFile(), object : TypeReference<List<Product>>() {})
-            products = prod
+            if (validateProductRepository(prod)) {
+                products = prod
+            }
         }
     }
 
@@ -52,5 +55,19 @@ class ProducRepository {
             repoFile = dataDirectoryPath.resolve(repository).toFile()
         }
         return repoFile
+    }
+
+    private fun validateProductRepository(products: List<Product>): Boolean {
+        // Check uniqueness of product ids
+        if (!products.allUniqueBy { it.id }) {
+            Log.error("Not all ids in repository file are unique!")
+            return false
+        }
+        return true
+    }
+
+    private inline fun <T, R> Iterable<T>.allUniqueBy(transform: (T) -> R): Boolean {
+        val hashset = hashSetOf<R>()
+        return this.all { hashset.add(transform(it)) }
     }
 }
