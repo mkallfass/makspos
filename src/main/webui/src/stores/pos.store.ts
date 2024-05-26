@@ -49,7 +49,7 @@ export const usePosStore = defineStore("posStore", {
       }
     },
     order() {
-      const order = { lineitems: this.cartLineItems } as Order;
+      const order = { lineitems: this.cartLineItems, total: this.total } as Order;
       fetch("/api/orders", {
         method: "POST",
         body: JSON.stringify(order),
