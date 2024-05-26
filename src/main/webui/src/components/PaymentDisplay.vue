@@ -7,7 +7,8 @@
       <div class="grid font-bold text-xl">
         <div class="col-6">Bezahlt</div>
         <div class="col-6 md:col-3 col-offset-0 md:col-offset-3">
-          <InputNumber v-model="posStore.givenAmount" :inputStyle="{'width': '100%', 'text-align': 'right'}" currency="EUR" inputClass="font-bold text-xl"
+          <InputNumber v-model="posStore.givenAmount" :inputStyle="{'width': '100%', 'text-align': 'right'}"
+                       currency="EUR" inputClass="font-bold text-xl"
                        locale="de-DE" mode="currency" />
         </div>
         <div v-for="p in configStore.paymentPresets" :key="p" class="col-4 xl:col-2">

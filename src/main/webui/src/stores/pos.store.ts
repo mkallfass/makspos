@@ -49,25 +49,26 @@ export const usePosStore = defineStore("posStore", {
       }
     },
     order() {
-      const order = { lineitems: this.cartLineItems } as Order
+      const order = { lineitems: this.cartLineItems } as Order;
       fetch("/api/orders", {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(order),
         headers: {
-          'Content-Type': 'application/json; charset=UTF-8',
-          'Accept': 'application/json; charset=UTF-8'}
-      })
-      .then( (response) => {
-          if (response.ok) {
-            console.info("Order successfully posted to API" + order)
-          } else {
-            console.error("Could not post order to API: " + response)
-          }
+          "Content-Type": "application/json; charset=UTF-8",
+          "Accept": "application/json; charset=UTF-8"
         }
-      )
-      .catch( (error) => {
-        console.error("Error while post order to API: " + error)
-      });
+      })
+        .then((response) => {
+            if (response.ok) {
+              console.info("Order successfully posted to API" + order);
+            } else {
+              console.error("Could not post order to API: " + response);
+            }
+          }
+        )
+        .catch((error) => {
+          console.error("Error while post order to API: " + error);
+        });
       this.reset();
     },
     reset() {

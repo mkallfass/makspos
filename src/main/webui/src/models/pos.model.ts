@@ -14,6 +14,6 @@ export interface LineItem extends ProductSelection {
 }
 
 export interface Order {
-  lineitems : LineItem[];
+  lineitems: LineItem[];
   total: number;
 }

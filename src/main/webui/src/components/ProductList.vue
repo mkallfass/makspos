@@ -14,7 +14,8 @@
       <template #body="slotProps">
         <div class="flex justify-content-center flex-wrap">
           <div class="justify-content-center">
-            <InputNumber v-model="slotProps.data.quantity" :inputStyle="{'width': '3rem', 'text-align': 'center'}" :max="99" :min="0"
+            <InputNumber v-model="slotProps.data.quantity" :inputStyle="{'width': '3rem', 'text-align': 'center'}"
+                         :max="99" :min="0"
                          buttonLayout="horizontal"
                          showButtons @input="quantityChanged(slotProps.data)">
               <template #incrementbuttonicon>
