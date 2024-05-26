@@ -40,6 +40,8 @@ import { formatCurrency } from "@/utils";
 const configStore = useConfigStore();
 const posStore = usePosStore()
 
+posStore.fetchProducts()
+
 const quantityChanged = (product: LineItem) => {
   console.log("Quantity of " + JSON.stringify(product) + " changed");
 };

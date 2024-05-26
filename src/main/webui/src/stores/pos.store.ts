@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import type { LineItem } from "@/models/pos.model";
-import { PRODUCTS } from "@/data/products";
 import { useConfigStore } from "@/stores/config.store";
 import { formatCurrency } from "@/utils";
 
@@ -12,7 +11,7 @@ interface State {
 
 export const usePosStore = defineStore("posStore", {
   state: (): State => ({
-    products: structuredClone(PRODUCTS),
+    products: [] as LineItem[],
     total: 0
   } as State),
   getters: {
@@ -39,13 +38,25 @@ export const usePosStore = defineStore("posStore", {
     }
   },
   actions: {
+    async fetchProducts(){
+      const response = await fetch("api/products")
+      try {
+        const productListJson = await response.json()
+        this.products = productListJson as LineItem[]
+      }
+      catch (error) {
+        this.products = [] as LineItem[]
+        console.error("Error loading products:", error)
+        return error
+      }
+    },
     order() {
       this.reset()
     },
     reset() {
-      this.products = structuredClone(PRODUCTS);
+      this.fetchProducts()
       this.total = 0
       this.givenAmount = 0
-    }
+      }
   }
 })
