@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { RouterView } from "vue-router";
 import { useConfigStore } from "@/stores/config.store";
 

@@ -39,7 +39,7 @@ import { usePosStore } from "@/stores/pos.store";
 import { formatCurrency } from "@/utils";
 
 const configStore = useConfigStore();
-const posStore = usePosStore()
-const { cartLineItems } = storeToRefs(posStore)
+const posStore = usePosStore();
+const { cartLineItems } = storeToRefs(posStore);
 </script>
 

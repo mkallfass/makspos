@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="grid" >
+    <div class="grid">
       <div class="col-12 lg:col-6">
         <ProductList />
       </div>
@@ -13,7 +13,7 @@
   </main>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import ProductList from "@/components/ProductList.vue";
 import CartDisplay from "@/components/CartDisplay.vue";
 import PaymentDisplay from "@/components/PaymentDisplay.vue";

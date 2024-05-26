@@ -4,9 +4,9 @@ import { useConfigStore } from "@/stores/config.store";
 import { formatCurrency } from "@/utils";
 
 interface State {
-  products: LineItem[]
-  total: number
-  givenAmount: number
+  products: LineItem[];
+  total: number;
+  givenAmount: number;
 }
 
 export const usePosStore = defineStore("posStore", {
@@ -17,46 +17,44 @@ export const usePosStore = defineStore("posStore", {
   getters: {
     cartLineItems(state) {
       // Calculate line item
-      let cartTotal: number = 0
+      let cartTotal: number = 0;
       for (const l of state.products) {
         if (l.quantity) {
-          l.total = l.quantity * l.price
-          cartTotal = cartTotal + l.total
-        }
-        else {
-          l.quantity = 0
-          l.total = 0
+          l.total = l.quantity * l.price;
+          cartTotal = cartTotal + l.total;
+        } else {
+          l.quantity = 0;
+          l.total = 0;
         }
       }
-      state.total = cartTotal
-      return state.products.filter(item => item.quantity > 0)
+      state.total = cartTotal;
+      return state.products.filter(item => item.quantity > 0);
     },
     returnAmount(state) {
       if (state.givenAmount > 0) {
-        return formatCurrency(state.givenAmount - state.total, useConfigStore())
+        return formatCurrency(state.givenAmount - state.total, useConfigStore());
       }
     }
   },
   actions: {
-    async fetchProducts(){
-      const response = await fetch("api/products")
+    async fetchProducts() {
+      const response = await fetch("api/products");
       try {
-        const productListJson = await response.json()
-        this.products = productListJson as LineItem[]
-      }
-      catch (error) {
-        this.products = [] as LineItem[]
-        console.error("Error loading products:", error)
-        return error
+        const productListJson = await response.json();
+        this.products = productListJson as LineItem[];
+      } catch (error) {
+        this.products = [] as LineItem[];
+        console.error("Error loading products:", error);
+        return error;
       }
     },
     order() {
-      this.reset()
+      this.reset();
     },
     reset() {
-      this.fetchProducts()
-      this.total = 0
-      this.givenAmount = 0
-      }
+      this.fetchProducts();
+      this.total = 0;
+      this.givenAmount = 0;
+    }
   }
-})
+});

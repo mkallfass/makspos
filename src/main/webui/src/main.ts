@@ -17,27 +17,27 @@ import Button from "primevue/button";
 
 import "./assets/main.css";
 import "primevue/resources/themes/aura-light-green/theme.css";
-import 'primevue/resources/primevue.min.css';
-import "primeflex/primeflex.css"
+import "primevue/resources/primevue.min.css";
+import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(createPinia())
-app.use(router)
+app.use(createPinia());
+app.use(router);
 app.use(ToastService);
 app.use(PrimeVue, {
   ripple: true
 });
 
-app.component('Toolbar', Toolbar)
-app.component('Splitter', Splitter)
-app.component('SplitterPanel', SplitterPanel)
-app.component('Card', Card)
+app.component("Toolbar", Toolbar);
+app.component("Splitter", Splitter);
+app.component("SplitterPanel", SplitterPanel);
+app.component("Card", Card);
 app.component("DataTable", DataTable);
 app.component("Column", Column);
 app.component("InputNumber", InputNumber);
 app.component("Toast", Toast);
-app.component('Button', Button)
+app.component("Button", Button);
 
-app.mount('#app')
+app.mount("#app");
