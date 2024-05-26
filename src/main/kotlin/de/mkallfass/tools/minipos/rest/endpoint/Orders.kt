@@ -2,7 +2,6 @@ package de.mkallfass.tools.minipos.rest.endpoint
 
 import de.mkallfass.tools.minipos.domain.Order
 import de.mkallfass.tools.minipos.rest.model.Error
-import de.mkallfass.tools.minipos.rest.model.OrderCreatedResponse
 import de.mkallfass.tools.minipos.service.OrderService
 import io.quarkus.logging.Log
 import jakarta.inject.Inject
@@ -42,7 +41,7 @@ class Orders {
                 content = arrayOf(
                     Content(
                         mediaType = MediaType.APPLICATION_JSON,
-                        schema = Schema(implementation = OrderCreatedResponse::class)
+                        schema = Schema(implementation = Order::class)
                     )
                 )
             ),
@@ -63,7 +62,7 @@ class Orders {
         return try {
             validateOrder(order)
             val orderId = orderService.create(order)
-            Response.ok().status(Response.Status.CREATED).entity(OrderCreatedResponse(id = orderId!!)).build()
+            Response.ok().status(Response.Status.CREATED).entity(order).build()
         } catch (e: Exception) {
             Log.error("Error while creating order ${order}", e)
             Response.serverError()
