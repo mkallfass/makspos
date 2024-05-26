@@ -1,5 +1,5 @@
 <template>
-  <DataTable :value="posStore.products" showGridlines stripedRows>
+  <DataTable :value="posStore.lineitems" showGridlines stripedRows>
     <Column field="name" header="Speisen und Getränke">
       <template #body="slotProps">
         {{ slotProps.data.name }} <small>{{ slotProps.data.description }}</small>

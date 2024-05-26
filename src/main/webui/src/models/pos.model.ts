@@ -12,3 +12,8 @@ export interface ProductSelection extends Product {
 export interface LineItem extends ProductSelection {
   total: number;
 }
+
+export interface Order {
+  lineitems : LineItem[];
+  total: number;
+}
