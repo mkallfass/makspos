@@ -5,15 +5,19 @@ import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
 import org.eclipse.microprofile.openapi.annotations.media.Schema
 
-@Schema(description = "Represents a a product")
+@Schema(description = "Represents statistics about a product")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-open class Product(
+data class ProductStatistic(
     override var id: String,
     override var name: String? = null,
     override var description: String? = null,
 
-    @Schema(name = "price", description = "The price of the product")
-    @field:JsonProperty("price")
-    open var price: Double? = null,
+    @Schema(name = "orderedCount", description = "The total count the product was ordered")
+    @field:JsonProperty("orderedCount")
+    var orderedCount: Double,
+
+    @Schema(name = "revenue", description = "The revenue made with the product")
+    @field:JsonProperty("revenue")
+    var revenue: Double,
 ) : BaseProduct(id = id, name = name, description = description)

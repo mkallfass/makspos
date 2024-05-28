@@ -1,6 +1,8 @@
 package de.mkallfass.tools.minipos.service
 
 import de.mkallfass.tools.minipos.domain.Order
+import de.mkallfass.tools.minipos.domain.OrderStatistic
+import de.mkallfass.tools.minipos.domain.ProductStatistic
 import io.quarkus.logging.Log
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
@@ -17,15 +19,31 @@ class OrderService {
     lateinit var productService: ProductService
 
     fun create(order: Order): String? {
-        Log.info("Order received: ${order}")
+        Log.info("Order received: $order")
         processOrder(order)
         orderRepository.add(order)
-        Log.info("Order processed: ${order}")
+        Log.info("Order processed: $order")
         return order.id
     }
 
     fun getAll(): List<Order> {
         return orderRepository.getAll()
+    }
+
+    fun getStatistics(): OrderStatistic {
+        var overallRevenue = 0.0
+        val productStatistics: ArrayList<ProductStatistic> = ArrayList()
+        val orders = getAll()
+
+        for (order in orders) {
+            overallRevenue += order.total!!
+            calculateProductStatistic(order, productStatistics)
+        }
+
+        return OrderStatistic(
+            orderCount = orders.size,
+            overallRevenue = overallRevenue,
+            productStatistics = productStatistics.sortedByDescending { it.orderedCount })
     }
 
     private fun processOrder(order: Order) {
@@ -59,5 +77,29 @@ class OrderService {
             orderTotal += lineItemTotal
         }
         order.total = orderTotal
+    }
+
+    private fun calculateProductStatistic(order: Order, productStatistics: ArrayList<ProductStatistic>) {
+        for (lineitem in order.lineItems) {
+            var statistic = productStatistics.find { it.id == lineitem.id }
+            if (statistic == null) {
+                // Try to create statistic from product repository
+                var product = productService.getProductById(lineitem.id)
+                if (product == null) {
+                    // Create statistic from line item
+                    product = lineitem
+                }
+                statistic = ProductStatistic(
+                    id = product.id,
+                    name = product.name,
+                    description = product.description,
+                    orderedCount = 0.0,
+                    revenue = 0.0
+                )
+                productStatistics.add(statistic)
+            }
+            statistic.orderedCount += lineitem.quantity
+            statistic.revenue += lineitem.total!!
+        }
     }
 }

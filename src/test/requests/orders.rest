@@ -7,10 +7,10 @@ Content-Type: application/json
   "lineitems": [
     {
       "id": "1001",
-      "quantity": 5
+      "quantity": 12
     },
     {
-      "id": "2010",
+      "id": "1009",
       "quantity": 3.5
     }
   ]
@@ -39,3 +39,8 @@ Content-Type: application/json
     }
   ]
 }
+
+### Get order statistics
+GET {{base_url}}/api/orders/statistics
+Accept: application/json
+Content-Type: application/json

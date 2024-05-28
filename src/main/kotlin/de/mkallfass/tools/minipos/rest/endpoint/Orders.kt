@@ -1,6 +1,7 @@
 package de.mkallfass.tools.minipos.rest.endpoint
 
 import de.mkallfass.tools.minipos.domain.Order
+import de.mkallfass.tools.minipos.domain.OrderStatistic
 import de.mkallfass.tools.minipos.rest.model.Error
 import de.mkallfass.tools.minipos.service.OrderService
 import io.quarkus.logging.Log
@@ -9,10 +10,7 @@ import jakarta.validation.ConstraintViolation
 import jakarta.validation.Valid
 import jakarta.validation.ValidationException
 import jakarta.validation.Validator
-import jakarta.ws.rs.Consumes
-import jakarta.ws.rs.POST
-import jakarta.ws.rs.Path
-import jakarta.ws.rs.Produces
+import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response
 import org.eclipse.microprofile.openapi.annotations.Operation
@@ -61,18 +59,57 @@ class Orders {
     fun order(@Valid order: Order): Response {
         return try {
             validateOrder(order)
-            val orderId = orderService.create(order)
+            orderService.create(order)
             Response.ok().status(Response.Status.CREATED).entity(order).build()
         } catch (e: Exception) {
-            Log.error("Error while creating order ${order}", e)
+            Log.error("Error while creating order $order", e)
             Response.serverError()
-                .entity(Error(message = "Error while creating order ${order}: " + (e.message ?: e.toString()))).build()
+                .entity(Error(message = "Error while creating order $order: " + (e.message ?: e.toString()))).build()
         }
     }
 
-    // Todo
+    @Operation(summary = "Get order statistics")
+    @APIResponses(
+        value = [
+            APIResponse(
+                responseCode = "200",
+                description = "The order statistics were successfully calculated",
+                content = arrayOf(
+                    Content(
+                        mediaType = MediaType.APPLICATION_JSON,
+                        schema = Schema(implementation = OrderStatistic::class)
+                    )
+                )
+            ),
+            APIResponse(
+                responseCode = "500",
+                description = "Unexpected error",
+                content = arrayOf(
+                    Content(
+                        mediaType = MediaType.APPLICATION_JSON,
+                        schema = Schema(implementation = Error::class)
+                    )
+                )
+            )
+        ]
+    )
+    @GET
+    @Path("/statistics")
+    fun getOrderStatistics(): Response {
+        return try {
+            val statistics = orderService.getStatistics()
+            Response.ok().status(Response.Status.OK).entity(statistics).build()
+        } catch (e: Exception) {
+            Log.error("Error while calculating order statistics", e)
+            Response.serverError()
+                .entity(Error(message = "Error while calculating order statistics: " + (e.message ?: e.toString())))
+                .build()
+        }
+    }
+
+    // TODO
     private fun validateOrder(order: Order) {
-        val violations: Set<ConstraintViolation<Order>> = validator.validate<Order>(order)
+        val violations: Set<ConstraintViolation<Order>> = validator.validate(order)
         if (violations.isNotEmpty()) {
             throw ValidationException(violations.toString())
         }
