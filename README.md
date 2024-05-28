@@ -10,6 +10,7 @@
 - [ ] Security / Login
      - [Quarkus Security Getting Tutorial](https://quarkus.io/guides/security-getting-started-tutorial)
      - [Quarkus JWT Security Quickstart Project](https://github.com/quarkusio/quarkus-quickstarts/tree/main/security-jwt-quickstart)
+     - [Quarkus Security Properties Guide](https://quarkus.io/guides/security-properties)
 
 ### Features
 - [ ] Order Statistics
