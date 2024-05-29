@@ -26,7 +26,7 @@
      - MaKsPOS
      - MaksPOS
      - Ma[ks]POS
-- [ ]Add Badges 
+- [ ] Add Badges 
      - from https://shields.io/
 ### Infos
 - [Open Source Guide](https://opensource.guide/starting-a-project/)
