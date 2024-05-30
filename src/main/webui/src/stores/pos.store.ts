@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { LineItem, Order, OrderStatistic } from "@/models/pos.model";
+import type { LineItem, Order, OrderStatistics } from "@/models/pos.model";
 import { useConfigStore } from "@/stores/config.store";
 import { formatCurrency } from "@/utils";
 
@@ -7,14 +7,14 @@ interface State {
   lineitems: LineItem[];
   total: number;
   givenAmount: number;
-  orderStatistic: OrderStatistic;
+  orderStatistics: OrderStatistics;
 }
 
 export const usePosStore = defineStore("posStore", {
   state: (): State => ({
     lineitems: [] as LineItem[],
     total: 0,
-    orderStatistic: {} as OrderStatistic
+    orderStatistics: {} as OrderStatistics
   } as State),
   getters: {
     cartLineItems(state) {
@@ -78,11 +78,11 @@ export const usePosStore = defineStore("posStore", {
       this.total = 0;
       this.givenAmount = 0;
     },
-    async fetchStatistic() {
+    async fetchStatistics() {
       const response = await fetch("/api/orders/statistics");
       try {
-        const orderStatisticJson = await response.json();
-        this.orderStatistic = orderStatisticJson as OrderStatistic;
+        const orderStatisticsJson = await response.json();
+        this.orderStatistics = orderStatisticsJson as OrderStatistics;
       } catch (error) {
         console.error("Error loading statistics:", error);
         return error;

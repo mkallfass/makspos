@@ -1,7 +1,7 @@
 package de.mkallfass.makspos.rest.endpoint
 
 import de.mkallfass.makspos.domain.Order
-import de.mkallfass.makspos.domain.OrderStatistic
+import de.mkallfass.makspos.domain.OrderStatistics
 import de.mkallfass.makspos.rest.model.Error
 import de.mkallfass.makspos.service.OrderService
 import io.quarkus.logging.Log
@@ -68,7 +68,7 @@ class Orders {
         }
     }
 
-    @Operation(summary = "Get order statistics")
+    @Operation(summary = "Get the order statistics")
     @APIResponses(
         value = [
             APIResponse(
@@ -77,7 +77,7 @@ class Orders {
                 content = arrayOf(
                     Content(
                         mediaType = MediaType.APPLICATION_JSON,
-                        schema = Schema(implementation = OrderStatistic::class)
+                        schema = Schema(implementation = OrderStatistics::class)
                     )
                 )
             ),

@@ -8,7 +8,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema
 @Schema(description = "Represents statistics about the placed orders")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-data class OrderStatistic(
+data class OrderStatistics(
     @Schema(name = "orderCount", description = "The total count of order")
     @field:JsonProperty("orderCount")
     var orderCount: Int,
@@ -19,5 +19,5 @@ data class OrderStatistic(
 
     @Schema(name = "productStatistics", description = "The statistics per product")
     @field:JsonProperty("productStatistics")
-    var productStatistics: List<ProductStatistic>,
+    var productStatistics: List<ProductStatistics>,
 )

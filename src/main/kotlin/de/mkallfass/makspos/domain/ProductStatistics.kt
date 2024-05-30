@@ -8,7 +8,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema
 @Schema(description = "Represents statistics about a product")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-data class ProductStatistic(
+data class ProductStatistics(
     override var id: String,
     override var name: String? = null,
     override var description: String? = null,

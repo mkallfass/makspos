@@ -21,13 +21,13 @@ export interface Order {
   total: number;
 }
 
-export interface OrderStatistic {
+export interface OrderStatistics {
   orderCount: number;
   overallRevenue: number;
-  productStatistics: ProductStatistic[];
+  productStatistics: ProductStatistics[];
 }
 
-export interface ProductStatistic extends BaseProduct {
+export interface ProductStatistics extends BaseProduct {
   orderedCount: number;
   revenue: number;
 }

@@ -4,17 +4,17 @@
     <template #content>
       <div class="grid font-bold text-xl">
         <div class="col-6">Anzahl Bestellungen</div>
-        <div class="col-6" style="text-align: right">{{ posStore.orderStatistic.orderCount }}</div>
+        <div class="col-6" style="text-align: right">{{ posStore.orderStatistics.orderCount }}</div>
       </div>
       <div class="grid font-bold text-xl">
         <div class="col-6">Gesamtumsatz</div>
         <div class="col-6" style="text-align: right">
-          {{ formatCurrency(posStore.orderStatistic.overallRevenue, configStore) }}
+          {{ formatCurrency(posStore.orderStatistics.overallRevenue, configStore) }}
         </div>
       </div>
     </template>
   </Card>
-  <DataTable :value="posStore.orderStatistic.productStatistics" showGridlines stripedRows>
+  <DataTable :value="posStore.orderStatistics.productStatistics" showGridlines stripedRows>
     <Column field="name" header="Produkt">
       <template #body="slotProps">
         {{ slotProps.data.name }} <small>{{ slotProps.data.description }}</small>
@@ -41,6 +41,6 @@ import { formatCurrency } from "@/utils";
 const configStore = useConfigStore();
 const posStore = usePosStore();
 
-posStore.fetchStatistic();
+posStore.fetchStatistics();
 </script>
 

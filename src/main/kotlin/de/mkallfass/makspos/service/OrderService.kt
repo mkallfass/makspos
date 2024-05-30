@@ -1,8 +1,8 @@
 package de.mkallfass.makspos.service
 
 import de.mkallfass.makspos.domain.Order
-import de.mkallfass.makspos.domain.OrderStatistic
-import de.mkallfass.makspos.domain.ProductStatistic
+import de.mkallfass.makspos.domain.OrderStatistics
+import de.mkallfass.makspos.domain.ProductStatistics
 import io.quarkus.logging.Log
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
@@ -30,17 +30,17 @@ class OrderService {
         return orderRepository.getAll()
     }
 
-    fun getStatistics(): OrderStatistic {
+    fun getStatistics(): OrderStatistics {
         var overallRevenue = 0.0
-        val productStatistics: ArrayList<ProductStatistic> = ArrayList()
+        val productStatistics: ArrayList<ProductStatistics> = ArrayList()
         val orders = getAll()
 
         for (order in orders) {
             overallRevenue += order.total!!
-            calculateProductStatistic(order, productStatistics)
+            calculateProductStatistics(order, productStatistics)
         }
 
-        return OrderStatistic(
+        return OrderStatistics(
             orderCount = orders.size,
             overallRevenue = overallRevenue,
             productStatistics = productStatistics.sortedByDescending { it.orderedCount })
@@ -79,27 +79,27 @@ class OrderService {
         order.total = orderTotal
     }
 
-    private fun calculateProductStatistic(order: Order, productStatistics: ArrayList<ProductStatistic>) {
+    private fun calculateProductStatistics(order: Order, productStatistics: ArrayList<ProductStatistics>) {
         for (lineitem in order.lineItems) {
-            var statistic = productStatistics.find { it.id == lineitem.id }
-            if (statistic == null) {
-                // Try to create statistic from product repository
+            var statistics = productStatistics.find { it.id == lineitem.id }
+            if (statistics == null) {
+                // Try to create statistics from product repository
                 var product = productService.getProductById(lineitem.id)
                 if (product == null) {
-                    // Create statistic from line item
+                    // Create statistics from line item
                     product = lineitem
                 }
-                statistic = ProductStatistic(
+                statistics = ProductStatistics(
                     id = product.id,
                     name = product.name,
                     description = product.description,
                     orderedCount = 0.0,
                     revenue = 0.0
                 )
-                productStatistics.add(statistic)
+                productStatistics.add(statistics)
             }
-            statistic.orderedCount += lineitem.quantity
-            statistic.revenue += lineitem.total!!
+            statistics.orderedCount += lineitem.quantity
+            statistics.revenue += lineitem.total!!
         }
     }
 }
