@@ -9,9 +9,9 @@
         <version>2.10</version>
     </parent>
 
-    <groupId>de.mkallfass.tools</groupId>
-    <artifactId>minipos</artifactId>
-    <name>Mini Point Of Sales</name>
+    <groupId>de.mkallfass</groupId>
+    <artifactId>makspos</artifactId>
+    <name>MaKs Point Of Sales</name>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>

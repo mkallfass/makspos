@@ -1,6 +1,6 @@
-package de.mkallfass.tools.minipos.service
+package de.mkallfass.makspos.service
 
-import de.mkallfass.tools.minipos.domain.Product
+import de.mkallfass.makspos.domain.Product
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject
 

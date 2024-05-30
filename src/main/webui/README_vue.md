@@ -1,4 +1,4 @@
-# minipos WebUI
+# makspos WebUI
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -80,7 +80,7 @@ Vue.js - The Progressive JavaScript Framework
 ✔ Add Prettier for code formatting? … No / Yes
 ✔ Add Vue DevTools 7 extension for debugging? (experimental) … No / Yes
 
-Scaffolding project in /Users/matthias.kallfass/Privat/Documents/git/misc/de.mkallfass.tools.minipos/src/main/webui...
+Scaffolding project in /Users/matthias.kallfass/Privat/Documents/git/misc/de.mkallfass.makspos/src/main/webui...
 
 Done. Now run:
 

@@ -1,4 +1,4 @@
-package de.mkallfass.tools.minipos.rest.endpoint
+package de.mkallfass.makspos.rest.endpoint
 
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given

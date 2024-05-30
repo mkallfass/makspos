@@ -1,8 +1,8 @@
-package de.mkallfass.tools.minipos.service
+package de.mkallfass.makspos.service
 
-import de.mkallfass.tools.minipos.domain.Order
-import de.mkallfass.tools.minipos.domain.OrderStatistic
-import de.mkallfass.tools.minipos.domain.ProductStatistic
+import de.mkallfass.makspos.domain.Order
+import de.mkallfass.makspos.domain.OrderStatistic
+import de.mkallfass.makspos.domain.ProductStatistic
 import io.quarkus.logging.Log
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Inject

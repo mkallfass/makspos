@@ -1,9 +1,9 @@
-package de.mkallfass.tools.minipos.rest.endpoint
+package de.mkallfass.makspos.rest.endpoint
 
-import de.mkallfass.tools.minipos.domain.Order
-import de.mkallfass.tools.minipos.domain.OrderStatistic
-import de.mkallfass.tools.minipos.rest.model.Error
-import de.mkallfass.tools.minipos.service.OrderService
+import de.mkallfass.makspos.domain.Order
+import de.mkallfass.makspos.domain.OrderStatistic
+import de.mkallfass.makspos.rest.model.Error
+import de.mkallfass.makspos.service.OrderService
 import io.quarkus.logging.Log
 import jakarta.inject.Inject
 import jakarta.validation.ConstraintViolation

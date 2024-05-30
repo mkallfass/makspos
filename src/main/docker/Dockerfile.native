@@ -7,11 +7,11 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.native -t quarkus/minipos .
+# docker build -f src/main/docker/Dockerfile.native -t docker-registry.mkallfass.de/makspos .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 quarkus/minipos
+# docker run -i --rm -p 8080:8080 docker-registry.mkallfass.de/makspos
 #
 ###
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.9

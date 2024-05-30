@@ -1,4 +1,4 @@
-package de.mkallfass.tools.minipos.rest.model
+package de.mkallfass.makspos.rest.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

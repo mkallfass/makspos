@@ -1,5 +1,5 @@
 quarkus.analytics.timeout=3000
-quarkus.application.name=minipos
+quarkus.application.name=makspos
 quarkus.application.ui-header={applicationName} (powered by Quarkus)
 quarkus.application.version=1.0.0-SNAPSHOT
 quarkus.arc.auto-inject-fields=true
@@ -36,7 +36,7 @@ quarkus.console.disable-input=false
 quarkus.console.enabled=true
 quarkus.container-image.group=
 quarkus.container-image.insecure=false
-quarkus.container-image.name=de.mkallfass.tools.minipos
+quarkus.container-image.name=makspos
 quarkus.container-image.registry=docker-registry.mkallfass.de
 quarkus.container-image.tag=latest
 quarkus.debug.dump-build-metrics=false

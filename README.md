@@ -1,4 +1,4 @@
-# minipos
+# MaKsPOS
 
 ## READMEs
 - [Quarkus README](./README_quarkus.md)

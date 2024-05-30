@@ -1,7 +1,7 @@
-package de.mkallfass.tools.minipos.rest.endpoint
+package de.mkallfass.makspos.rest.endpoint
 
-import de.mkallfass.tools.minipos.domain.LineItem
-import de.mkallfass.tools.minipos.domain.Order
+import de.mkallfass.makspos.domain.LineItem
+import de.mkallfass.makspos.domain.Order
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType

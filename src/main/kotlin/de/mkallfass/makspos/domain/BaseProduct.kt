@@ -1,4 +1,4 @@
-package de.mkallfass.tools.minipos.domain
+package de.mkallfass.makspos.domain
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import jakarta.validation.Valid
