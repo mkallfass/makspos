@@ -4,17 +4,17 @@
     <template #content>
       <div class="grid font-bold text-xl">
         <div class="col-6">Anzahl Bestellungen</div>
-        <div class="col-6" style="text-align: right">{{ posStore.orderStatistics.orderCount }}</div>
+        <div class="col-6" style="text-align: right">{{ orderStatistics.orderCount }}</div>
       </div>
       <div class="grid font-bold text-xl">
         <div class="col-6">Gesamtumsatz</div>
         <div class="col-6" style="text-align: right">
-          {{ formatCurrency(posStore.orderStatistics.overallRevenue, configStore) }}
+          {{ formatCurrency(orderStatistics.overallRevenue, configStore) }}
         </div>
       </div>
     </template>
   </Card>
-  <DataTable :value="posStore.orderStatistics.productStatistics" showGridlines stripedRows>
+  <DataTable :value="orderStatistics.productStatistics" showGridlines stripedRows>
     <Column field="name" header="Produkt">
       <template #body="slotProps">
         {{ slotProps.data.name }} <small>{{ slotProps.data.description }}</small>
@@ -34,12 +34,14 @@
 </template>
 
 <script lang="ts" setup>
+import { storeToRefs } from "pinia";
 import { useConfigStore } from "@/stores/config.store";
 import { usePosStore } from "@/stores/pos.store";
 import { formatCurrency } from "@/utils";
 
 const configStore = useConfigStore();
 const posStore = usePosStore();
+const { orderStatistics } = storeToRefs(posStore);
 
 posStore.fetchStatistics();
 </script>

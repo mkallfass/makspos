@@ -1,5 +1,5 @@
 <template>
-  <DataTable :value="posStore.lineitems" showGridlines stripedRows>
+  <DataTable :value="lineitems" showGridlines stripedRows>
     <Column field="name" header="Speisen und Getränke">
       <template #body="slotProps">
         {{ slotProps.data.name }} <small>{{ slotProps.data.description }}</small>
@@ -33,6 +33,7 @@
 </template>
 
 <script lang="ts" setup>
+import { storeToRefs } from "pinia";
 import type { LineItem } from "@/models/pos.model";
 import { useConfigStore } from "@/stores/config.store";
 import { usePosStore } from "@/stores/pos.store";
@@ -40,6 +41,7 @@ import { formatCurrency } from "@/utils";
 
 const configStore = useConfigStore();
 const posStore = usePosStore();
+const { lineitems } = storeToRefs(posStore);
 
 posStore.fetchProducts();
 
