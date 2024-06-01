@@ -14,6 +14,7 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import InputNumber from "primevue/inputnumber";
 import Button from "primevue/button";
+import SplitButton from "primevue/splitbutton";
 
 import "./assets/main.css";
 import "primevue/resources/themes/aura-light-green/theme.css";
@@ -39,5 +40,6 @@ app.component("Column", Column);
 app.component("InputNumber", InputNumber);
 app.component("Toast", Toast);
 app.component("Button", Button);
+app.component("SplitButton", SplitButton);
 
 app.mount("#app");

@@ -5,6 +5,9 @@
       <template #center>
         <div class="font-bold text-xl">{{ configStore.title }}</div>
       </template>
+      <template #end>
+        <SplitButton :model="items" label="Menu" />
+      </template>
     </Toolbar>
 
     <!-- Content -->
@@ -24,9 +27,20 @@
 <script lang="ts" setup>
 import { RouterView } from "vue-router";
 import { useConfigStore } from "@/stores/config.store";
+import router from "@/router";
 
 const configStore = useConfigStore();
-</script>
 
-<style>
-</style>
+const items = [
+  {
+    label: "Bestellung erfassen", command: () => {
+      router.push("/order-form");
+    }
+  },
+  {
+    label: "Bestellstatistiken", command: () => {
+      router.push("/statistics");
+    }
+  }
+];
+</script>
