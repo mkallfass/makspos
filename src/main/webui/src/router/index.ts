@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import OrderFormView from "../views/OrderFormView.vue";
 import StatisticsView from "@/views/StatisticsView.vue";
 
 const router = createRouter({
@@ -8,7 +8,12 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomeView
+      redirect: "/order-form"
+    },
+    {
+      path: "/order-form",
+      name: "order-form",
+      component: OrderFormView
     },
     {
       path: "/statistics",
