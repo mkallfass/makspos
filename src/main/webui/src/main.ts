@@ -7,6 +7,7 @@ import PrimeVue from "primevue/config";
 import ToastService from "primevue/toastservice";
 import Toast from "primevue/toast";
 import Toolbar from "primevue/toolbar";
+import Menu from "primevue/menu";
 import Splitter from "primevue/splitter";
 import SplitterPanel from "primevue/splitterpanel";
 import Card from "primevue/card";
@@ -32,6 +33,7 @@ app.use(PrimeVue, {
 });
 
 app.component("Toolbar", Toolbar);
+app.component("Menu", Menu);
 app.component("Splitter", Splitter);
 app.component("SplitterPanel", SplitterPanel);
 app.component("Card", Card);

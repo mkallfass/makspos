@@ -6,7 +6,8 @@
         <div class="font-bold text-xl">{{ configStore.title }}</div>
       </template>
       <template #end>
-        <SplitButton :model="items" label="Menu" />
+        <Button aria-controls="overlay_menu" aria-haspopup="true" icon="pi pi-bars" type="button" @click="toggle" />
+        <Menu id="overlay_menu" ref="menu" :model="items" :popup="true" />
       </template>
     </Toolbar>
 
@@ -25,12 +26,14 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
 import { RouterView } from "vue-router";
 import { useConfigStore } from "@/stores/config.store";
 import router from "@/router";
 
 const configStore = useConfigStore();
 
+const menu = ref();
 const items = [
   {
     label: "Bestellung erfassen", command: () => {
@@ -43,4 +46,8 @@ const items = [
     }
   }
 ];
+
+const toggle = (event) => {
+  menu.value.toggle(event);
+};
 </script>
