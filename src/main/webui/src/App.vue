@@ -39,19 +39,19 @@ const items = [
     label: "Bestellung erfassen",
     icon: "pi pi-pen-to-square",
     command: () => {
-      router.push("/order-form");
+      router.push({ name: "order-form" });
     }
   },
   {
     label: "Bestellstatistiken",
     icon: "pi pi-chart-line",
     command: () => {
-      router.push("/statistics");
+      router.push({ name: "statistics" });
     }
   }
 ];
 
-const toggle = (event) => {
+const toggle = (event: any) => {
   menu.value.toggle(event);
 };
 </script>
