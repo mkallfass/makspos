@@ -36,12 +36,16 @@ const configStore = useConfigStore();
 const menu = ref();
 const items = [
   {
-    label: "Bestellung erfassen", command: () => {
+    label: "Bestellung erfassen",
+    icon: "pi pi-pen-to-square",
+    command: () => {
       router.push("/order-form");
     }
   },
   {
-    label: "Bestellstatistiken", command: () => {
+    label: "Bestellstatistiken",
+    icon: "pi pi-chart-line",
+    command: () => {
       router.push("/statistics");
     }
   }
