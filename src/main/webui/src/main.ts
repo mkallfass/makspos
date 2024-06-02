@@ -8,14 +8,11 @@ import ToastService from "primevue/toastservice";
 import Toast from "primevue/toast";
 import Toolbar from "primevue/toolbar";
 import Menu from "primevue/menu";
-import Splitter from "primevue/splitter";
-import SplitterPanel from "primevue/splitterpanel";
 import Card from "primevue/card";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import InputNumber from "primevue/inputnumber";
 import Button from "primevue/button";
-import SplitButton from "primevue/splitbutton";
 
 import "./assets/main.css";
 import "primevue/resources/themes/aura-light-green/theme.css";
@@ -32,16 +29,13 @@ app.use(PrimeVue, {
   ripple: true
 });
 
+app.component("Toast", Toast);
 app.component("Toolbar", Toolbar);
+app.component("Button", Button);
 app.component("Menu", Menu);
-app.component("Splitter", Splitter);
-app.component("SplitterPanel", SplitterPanel);
 app.component("Card", Card);
 app.component("DataTable", DataTable);
 app.component("Column", Column);
 app.component("InputNumber", InputNumber);
-app.component("Toast", Toast);
-app.component("Button", Button);
-app.component("SplitButton", SplitButton);
 
 app.mount("#app");
