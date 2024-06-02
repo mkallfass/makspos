@@ -8,7 +8,7 @@ import jakarta.inject.Inject
 class ProductService {
 
     @Inject
-    lateinit var productRepository: ProducRepository
+    lateinit var productRepository: ProductRepository
 
     fun getProductList(): List<Product> {
         return productRepository.getProductList()

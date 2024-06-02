@@ -13,7 +13,7 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 @ApplicationScoped
-class ProducRepository {
+class ProductRepository {
 
     val mapper = ObjectMapper().registerKotlinModule().registerModule(JavaTimeModule())
 
