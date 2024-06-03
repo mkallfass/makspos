@@ -10,9 +10,9 @@ import java.util.*
 
 @ApplicationScoped
 class ConfigService {
-    val LABEL_PREFIX = "label."
-    val CURRENCY_KEY = "currency"
-    val PAYMENT_PRESETS_KEY = "paymentPresets"
+    private val LABEL_PREFIX = "label."
+    private val CURRENCY_KEY = "currency"
+    private val PAYMENT_PRESETS_KEY = "paymentPresets"
 
     @Inject
     lateinit var configRepository: ConfigRepository
@@ -22,7 +22,7 @@ class ConfigService {
         val bundle = configRepository.getConfigBundle(locale)
 
         val currency = bundle.getString(CURRENCY_KEY)
-        val paymentPresets = convertJsonToList(bundle.getString(PAYMENT_PRESETS_KEY)) as List<Number>
+        val paymentPresets = convertJsonToNumberList(bundle.getString(PAYMENT_PRESETS_KEY))
         val labels = LinkedHashMap<String, String>()
         for (key in bundle.keys) {
             if (key.startsWith(LABEL_PREFIX)) {
@@ -41,12 +41,12 @@ class ConfigService {
         return getConfig(locale)
     }
 
-    private fun convertJsonToList(input: String): List<Any> {
+    private fun convertJsonToNumberList(input: String): List<Number> {
         val reader = Json.createReader(StringReader(input))
         val array = reader.readArray()
-        val list = mutableListOf<Any>()
+        val list = mutableListOf<Number>()
         for (element in array) {
-            list.add(element.toString())
+            list.add(element.toString().toDouble())
         }
         return list
     }
