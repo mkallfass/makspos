@@ -1,9 +1,8 @@
 <template>
   <div class="app-container">
-    <!-- Header -->
     <Toolbar>
       <template #center>
-        <div class="font-bold text-xl">{{ configStore.title }}</div>
+        <div class="font-bold text-xl">{{ getLabel("app.title") }}</div>
       </template>
       <template #end>
         <Button aria-controls="overlay_menu" aria-haspopup="true" icon="pi pi-bars" type="button" @click="toggle" />
@@ -19,7 +18,7 @@
     <!-- Footer -->
     <Toolbar>
       <template #center>
-        <div>{{ configStore.footer }}</div>
+        <div>{{ getLabel("app.footer") }}</div>
       </template>
     </Toolbar>
   </div>
@@ -28,10 +27,8 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { RouterView } from "vue-router";
-import { useConfigStore } from "@/stores/config.store";
 import router from "@/router";
-
-const configStore = useConfigStore();
+import { getLabel } from "@/utils";
 
 const menu = ref();
 const items = [

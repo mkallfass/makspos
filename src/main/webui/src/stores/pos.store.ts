@@ -1,7 +1,5 @@
 import { defineStore } from "pinia";
 import type { LineItem, Order, OrderStatistics } from "@/models/pos.model";
-import { useConfigStore } from "@/stores/config.store";
-import { formatCurrency } from "@/utils";
 
 interface State {
   lineitems: LineItem[];
@@ -34,7 +32,9 @@ export const usePosStore = defineStore("posStore", {
     },
     returnAmount(state) {
       if (state.givenAmount > 0) {
-        return formatCurrency(state.givenAmount - state.total, useConfigStore());
+        return state.givenAmount - state.total;
+      } else {
+        return 0;
       }
     }
   },
@@ -72,7 +72,7 @@ export const usePosStore = defineStore("posStore", {
       })
         .then((response) => {
             if (response.ok) {
-              console.info("Order successfully posted to API" + order);
+              console.info("Order successfully posted to API: " + JSON.stringify(order));
             } else {
               console.error("Could not post order to API: " + response);
             }

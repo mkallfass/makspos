@@ -11,12 +11,12 @@
                        currency="EUR" inputClass="font-bold text-xl"
                        locale="de-DE" mode="currency" />
         </div>
-        <div v-for="p in configStore.paymentPresets" :key="p" class="col-4 xl:col-2">
-          <Button :label="formatCurrency(p, configStore)" rounded severity="secondary" style="width: 100%"
+        <div v-for="p in getConfig().paymentPresets" :key="p" class="col-4 xl:col-2">
+          <Button :label="formatCurrency(p)" rounded severity="secondary" style="width: 100%"
                   @click="posStore.givenAmount = p" />
         </div>
         <div class="col-6">Rückgeld</div>
-        <div class="col-6" style="text-align: right">{{ returnAmount }}</div>
+        <div class="col-6" style="text-align: right">{{ formatCurrency(returnAmount) }}</div>
       </div>
     </template>
   </Card>
@@ -24,11 +24,10 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
-import { useConfigStore } from "@/stores/config.store";
 import { usePosStore } from "@/stores/pos.store";
 import { formatCurrency } from "@/utils";
+import { getConfig } from "@/config";
 
-const configStore = useConfigStore();
 const posStore = usePosStore();
 const { returnAmount } = storeToRefs(posStore);
 </script>

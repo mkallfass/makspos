@@ -19,9 +19,11 @@ import "primevue/resources/themes/aura-light-green/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
+import { fetchConfig } from "@/config";
+
+await fetchConfig();
 
 const app = createApp(App);
-
 app.use(createPinia());
 app.use(router);
 app.use(ToastService);

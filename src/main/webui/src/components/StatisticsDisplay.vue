@@ -9,7 +9,7 @@
       <div class="grid font-bold text-xl">
         <div class="col-6">Gesamtumsatz</div>
         <div class="col-6" style="text-align: right">
-          {{ formatCurrency(orderStatistics.overallRevenue, configStore) }}
+          {{ formatCurrency(orderStatistics.overallRevenue) }}
         </div>
       </div>
     </template>
@@ -27,7 +27,7 @@
     </Column>
     <Column field="revenue" header="Gesamtumsatz" sortable>
       <template #body="slotProps">
-        <div style="text-align:right;">{{ formatCurrency(slotProps.data.revenue, configStore) }}</div>
+        <div style="text-align:right;">{{ formatCurrency(slotProps.data.revenue) }}</div>
       </template>
     </Column>
   </DataTable>
@@ -35,11 +35,9 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from "pinia";
-import { useConfigStore } from "@/stores/config.store";
 import { usePosStore } from "@/stores/pos.store";
 import { formatCurrency } from "@/utils";
 
-const configStore = useConfigStore();
 const posStore = usePosStore();
 const { orderStatistics } = storeToRefs(posStore);
 
