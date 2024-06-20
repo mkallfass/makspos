@@ -33,14 +33,14 @@ import { getLabel } from "@/utils";
 const menu = ref();
 const items = [
   {
-    label: "Bestellung erfassen",
+    label: getLabel("app.menu.order"),
     icon: "pi pi-pen-to-square",
     command: () => {
       router.push({ name: "order-form" });
     }
   },
   {
-    label: "Bestellstatistiken",
+    label: getLabel("app.menu.statistics"),
     icon: "pi pi-chart-line",
     command: () => {
       router.push({ name: "statistics" });

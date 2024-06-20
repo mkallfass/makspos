@@ -1,16 +1,16 @@
 <template>
   <DataTable :value="lineitems" showGridlines stripedRows>
-    <Column field="name" header="Speisen und Getränke">
+    <Column :header="getLabel('productlist.name')" field="name">
       <template #body="slotProps">
         {{ slotProps.data.name }} <small>{{ slotProps.data.description }}</small>
       </template>
     </Column>
-    <Column field="price" header="Preis">
+    <Column :header="getLabel('productlist.price')" field="price">
       <template #body="slotProps">
         <div style="text-align:right;">{{ formatCurrency(slotProps.data.price) }}</div>
       </template>
     </Column>
-    <Column header="Auswahl">
+    <Column :header="getLabel('productlist.selection')">
       <template #body="slotProps">
         <div class="flex justify-content-center flex-wrap">
           <div class="justify-content-center">
@@ -36,7 +36,7 @@
 import { storeToRefs } from "pinia";
 import type { LineItem } from "@/models/pos.model";
 import { usePosStore } from "@/stores/pos.store";
-import { formatCurrency } from "@/utils";
+import { formatCurrency, getLabel } from "@/utils";
 
 const posStore = usePosStore();
 const { lineitems } = storeToRefs(posStore);
