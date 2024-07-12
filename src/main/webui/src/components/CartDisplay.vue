@@ -1,7 +1,7 @@
 <template>
   <Card>
     <template #title>
-      <div class="surface-ground">{{ getLabel("cart.title") }}</div>
+      <div class="bg-surface-50 dark:bg-surface-950">{{ getLabel("cart.title") }}</div>
     </template>
     <template #content>
       <DataTable :value="cartLineItems" showGridlines stripedRows>
@@ -22,7 +22,7 @@
           </template>
         </Column>
         <template #footer>
-          <div class="grid font-bold text-xl">
+          <div class="grid grid-cols-12 gap-4 font-bold text-xl">
             <div class="col">{{ getLabel("cart.total") }}</div>
             <div class="col" style="text-align: right">{{ formatCurrency(posStore.total) }}</div>
           </div>

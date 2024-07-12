@@ -16,7 +16,6 @@ import InputNumber from "primevue/inputnumber";
 import Button from "primevue/button";
 
 import "./assets/main.css";
-import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
 import { fetchConfig } from "@/config";
 

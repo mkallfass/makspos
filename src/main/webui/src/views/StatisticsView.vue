@@ -1,7 +1,7 @@
 <template>
   <main>
-    <div class="grid">
-      <div class="col-12">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-12">
         <StatisticsDisplay />
       </div>
     </div>

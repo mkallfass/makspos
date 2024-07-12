@@ -1,12 +1,12 @@
 <template>
   <Card>
     <template #content>
-      <div class="grid ">
-        <div class="col-6 xl:col-3 col-offset-0 xl:col-offset-6">
+      <div class="grid grid-cols-12 gap-4 ">
+        <div class="col-span-6 xl:col-span-3 col-start-1 xl:col-start-7">
           <Button :label="getLabel('order.cancel')" severity="secondary" style="width: 100%"
                   @click="posStore.$reset()" />
         </div>
-        <div class="col-6 xl:col-3">
+        <div class="col-span-6 xl:col-span-3">
           <Button :label="getLabel('order.order')" style="width: 100%" @click="posStore.order()" />
         </div>
       </div>

@@ -2,13 +2,13 @@
   <div class="text-center font-bold text-xl"><h1>{{ getLabel("statistics.title") }}</h1></div>
   <Card>
     <template #content>
-      <div class="grid font-bold text-xl">
-        <div class="col-6">{{ getLabel("statistics.ordercount") }}</div>
-        <div class="col-6" style="text-align: right">{{ orderStatistics.orderCount }}</div>
+      <div class="grid grid-cols-12 gap-4 font-bold text-xl">
+        <div class="col-span-6">{{ getLabel("statistics.ordercount") }}</div>
+        <div class="col-span-6" style="text-align: right">{{ orderStatistics.orderCount }}</div>
       </div>
-      <div class="grid font-bold text-xl">
-        <div class="col-6">{{ getLabel("statistics.overallrevenue") }}</div>
-        <div class="col-6" style="text-align: right">{{ formatCurrency(orderStatistics.overallRevenue) }}</div>
+      <div class="grid grid-cols-12 gap-4 font-bold text-xl">
+        <div class="col-span-6">{{ getLabel("statistics.overallrevenue") }}</div>
+        <div class="col-span-6" style="text-align: right">{{ formatCurrency(orderStatistics.overallRevenue) }}</div>
       </div>
     </template>
   </Card>
