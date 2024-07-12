@@ -4,6 +4,7 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 import PrimeVue from "primevue/config";
+import Aura from "@primevue/themes/aura";
 import ToastService from "primevue/toastservice";
 import Toast from "primevue/toast";
 import Toolbar from "primevue/toolbar";
@@ -15,9 +16,6 @@ import InputNumber from "primevue/inputnumber";
 import Button from "primevue/button";
 
 import "./assets/main.css";
-import "primevue/resources/themes/aura-light-green/theme.css";
-import "primevue/resources/primevue.min.css";
-import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
 import { fetchConfig } from "@/config";
 
@@ -28,6 +26,15 @@ app.use(createPinia());
 app.use(router);
 app.use(ToastService);
 app.use(PrimeVue, {
+  theme: {
+    preset: Aura
+  },
+  options: {
+    cssLayer: {
+      name: "primevue",
+      order: "tailwind-base, primevue, tailwind-utilities"
+    }
+  },
   ripple: true
 });
 

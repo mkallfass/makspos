@@ -1,10 +1,10 @@
 <template>
   <main>
-    <div class="grid">
-      <div class="col-12 lg:col-6">
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-12 lg:col-span-6">
         <ProductList />
       </div>
-      <div class="col-12 lg:col-6">
+      <div class="col-span-12 lg:col-span-6">
         <CartDisplay />
         <PaymentDisplay />
         <OrderDisplay />
