@@ -23,8 +23,8 @@
         </Column>
         <template #footer>
           <div class="grid grid-cols-12 gap-4 font-bold text-xl">
-            <div class="col">{{ getLabel("cart.total") }}</div>
-            <div class="col" style="text-align: right">{{ formatCurrency(posStore.total) }}</div>
+            <div class="col-span-6">{{ getLabel("cart.total") }}</div>
+            <div class="col-span-6" style="text-align: right">{{ formatCurrency(posStore.total) }}</div>
           </div>
         </template>
       </DataTable>

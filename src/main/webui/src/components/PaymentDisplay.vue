@@ -1,14 +1,15 @@
 <template>
   <Card>
     <template #title>
-      <div class="bg-surface-50 dark:bg-surface-950">{{ getLabel("payment.title") }}</div>
+      <div class="bg-surface-50 dark:bg-surface-950 font-bold text-xl">{{ getLabel("payment.title") }}</div>
     </template>
     <template #content>
       <div class="grid grid-cols-12 gap-4 font-bold text-xl">
         <div class="col-span-6">{{ getLabel("payment.payed") }}</div>
-        <div class="col-span-6 md:col-span-3 col-start-1 md:col-start-4">
-          <InputNumber v-model="posStore.givenAmount" :inputStyle="{'width': '100%', 'text-align': 'right'}"
-                       :currency="getConfig().currency" inputClass="font-bold text-xl" mode="currency" />
+        <div class="col-span-6 md:col-start-10 md:col-span-3">
+          <InputNumber v-model="posStore.givenAmount"
+                       :currency="getConfig().currency"
+                       :inputStyle="{'width': '100%', 'text-align': 'right', 'font-size': '1.25rem', 'line-height': '1.75rem'}" mode="currency" />
         </div>
         <div v-for="p in getConfig().paymentPresets" :key="p" class="col-span-4 xl:col-span-2">
           <Button :label="formatCurrency(p)" rounded severity="secondary" style="width: 100%"
