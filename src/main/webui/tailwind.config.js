@@ -1,9 +1,9 @@
-import tailwindcss_primeui from "tailwindcss-primeui";
+/** @type {import("tailwindcss").Config} */
 
 module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  plugins: [tailwindcss_primeui]
-};
+  plugins: [require("tailwindcss-primeui")]
+}
