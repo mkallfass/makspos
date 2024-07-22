@@ -22,7 +22,7 @@
     "primeicons": "^7.0.0",
     "primevue": "^4.0.0",
     "tailwindcss-primeui": "^0.3.4",
-    "vue": "^3.4.31",
+    "vue": "^3.4.33",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-cypress": "^3.3.0",
     "eslint-plugin-vue": "^9.23.0",
-    "jsdom": "^24.1.0",
+    "jsdom": "^24.1.1",
     "npm-run-all2": "^6.2.2",
     "postcss": "^8.4.39",
     "prettier": "^3.3.3",
