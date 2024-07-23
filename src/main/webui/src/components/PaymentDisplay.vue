@@ -16,7 +16,7 @@
                   @click="posStore.givenAmount = p" />
         </div>
         <div class="col-span-6">{{ getLabel("payment.change") }}</div>
-        <div class="col-span-6" style="text-align: right">{{ formatCurrency(returnAmount) }}</div>
+        <div class="col-span-6" :class="{ 'text-red-500': returnAmount < 0 }" style="text-align: right">{{ formatCurrency(returnAmount) }}</div>
       </div>
     </template>
   </Card>
