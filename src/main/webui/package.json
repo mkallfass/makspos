@@ -22,7 +22,7 @@
     "primeicons": "^7.0.0",
     "primevue": "^4.0.0",
     "tailwindcss-primeui": "^0.3.4",
-    "vue": "^3.4.33",
+    "vue": "^3.4.34",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
@@ -39,18 +39,18 @@
     "autoprefixer": "^10.4.19",
     "cypress": "^13.12.0",
     "eslint": "^8.57.0",
-    "eslint-plugin-cypress": "^3.3.0",
+    "eslint-plugin-cypress": "^3.4.0",
     "eslint-plugin-vue": "^9.23.0",
     "jsdom": "^24.1.1",
     "npm-run-all2": "^6.2.2",
-    "postcss": "^8.4.39",
+    "postcss": "^8.4.40",
     "prettier": "^3.3.3",
     "start-server-and-test": "^2.0.4",
-    "tailwindcss": "^3.4.6",
+    "tailwindcss": "^3.4.7",
     "typescript": "~5.5.4",
-    "vite": "^5.3.4",
+    "vite": "^5.3.5",
     "vite-plugin-vue-devtools": "^7.3.6",
     "vitest": "^2.0.3",
-    "vue-tsc": "^2.0.26"
+    "vue-tsc": "^2.0.29"
   }
 }
