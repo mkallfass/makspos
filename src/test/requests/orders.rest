@@ -1,0 +1,46 @@
+### Create minimum order
+POST {{base_url}}/api/orders
+Accept: application/json
+Content-Type: application/json
+
+{
+  "lineitems": [
+    {
+      "id": "1001",
+      "quantity": 12
+    },
+    {
+      "id": "1009",
+      "quantity": 3.5
+    }
+  ]
+}
+
+### Create order
+POST {{base_url}}/api/orders
+Accept: application/json
+Content-Type: application/json
+
+{
+  "lineitems": [
+    {
+      "id": "1001",
+      "name": "Steak",
+      "description": "mit Brötchen",
+      "quantity": 5,
+      "price": 5
+    },
+    {
+      "id": "2010",
+      "name": "Topinambur",
+      "description": "2cl",
+      "quantity": 3.5,
+      "price": 1.5
+    }
+  ]
+}
+
+### Get order statistics
+GET {{base_url}}/api/orders/statistics
+Accept: application/json
+Content-Type: application/json

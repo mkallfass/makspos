@@ -1,0 +1,4 @@
+### Get products
+GET {{base_url}}/api/products
+Accept: application/json
+Content-Type: application/json

@@ -1,0 +1,12 @@
+### Get config
+GET {{base_url}}/api/config
+Accept: application/json
+Content-Type: application/json
+Accept-Language: de-DE,de;q=0.8,en-US;q=0.5,en;q=0.3
+
+
+### Get english config
+GET {{base_url}}/api/config
+Accept: application/json
+Content-Type: application/json
+Accept-Language: en-US;q=0.8,en;q=0.3

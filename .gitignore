@@ -1,10 +1,14 @@
+# App
+/data/orders.jsonl
+/src/test/resources/data/orders.jsonl
+
 #Maven
 target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 release.properties
-setup.ps1
+.flattened-pom.xml
 
 # Eclipse
 .project
@@ -17,3 +21,27 @@ bin/
 *.ipr
 *.iml
 *.iws
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode
+.factorypath
+
+# OSX
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Local environment
+.env
+
+# Plugin directory
+/.quarkus/cli/plugins/
