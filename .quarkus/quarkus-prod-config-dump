@@ -1,7 +1,7 @@
 quarkus.analytics.timeout=3000
 quarkus.application.name=makspos
 quarkus.application.ui-header={applicationName} (powered by Quarkus)
-quarkus.application.version=1.0.0-SNAPSHOT
+quarkus.application.version=1.0.0
 quarkus.arc.auto-inject-fields=true
 quarkus.arc.auto-producer-methods=true
 quarkus.arc.context-propagation.enabled=true
