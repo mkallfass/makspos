@@ -4,18 +4,36 @@
 - [Quarkus README](./README_quarkus.md)
 - [Vue README](./src/main/webui/README_vue.md)
 
+## Release Build
+
+```shell script
+mvn external.atlassian.jgitflow:jgitflow-maven-plugin:1.0-m5.1:release-start -DautoVersionSubmodules=true -DupdateDependencies=true -DreleaseVersion=1.0.0 -DdevelopmentVersion=1.1.0-SNAPSHOT
+# locale branch release/[releaseVersion] created
+# make changes for release, e.g. set versions
+# local test in branch release/[releaseVersion]
+mvn external.atlassian.jgitflow:jgitflow-maven-plugin:1.0-m5.1:release-finish -DautoVersionSubmodules=true -DnoDeploy=true -DupdateDependencies=true -DreleaseVersion=1.0.0 -DdevelopmentVersion=1.1.0-SNAPSHOT
+git push
+# new develop version is build on CI server
+git checkout master
+git push
+# RELEASE version is build on CI server
+git push --tags
+```
+
 ## Backlog
 ### Todos
-- [ ] Config REST service (including labels)
+
+- [x] Config REST service (including labels)
 - [ ] Security / Login
      - [Quarkus Security Getting Tutorial](https://quarkus.io/guides/security-getting-started-tutorial)
      - [Quarkus JWT Security Quickstart Project](https://github.com/quarkusio/quarkus-quickstarts/tree/main/security-jwt-quickstart)
      - [Quarkus Security Properties Guide](https://quarkus.io/guides/security-properties)
-- [ ] Update to Kotlin 2.0
+- [x] Update to Kotlin 2.0
 
 ### Features
-- [ ] Order Statistics
-- [ ] Read-Only-View to show customer the actuale state of the order in a separate browser
+
+- [x] Order Statistics
+- [ ] Read-Only-View to show customer the actual state of the order in a separate browser
 - [ ] Pre Order / Cart functionality
      1. Order View for Customer to create a Cart
      2. Create QR with direct link to the Cart
@@ -23,7 +41,8 @@
 
 ## Publish as Open Source
 ### TODOs
-- [ ] Rename project
+
+- [x] Rename project
      - MaKsPOS
      - MaksPOS
      - Ma[ks]POS
