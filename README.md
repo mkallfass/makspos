@@ -14,7 +14,7 @@ mvn external.atlassian.jgitflow:jgitflow-maven-plugin:1.0-m5.1:release-start -Da
 mvn external.atlassian.jgitflow:jgitflow-maven-plugin:1.0-m5.1:release-finish -DautoVersionSubmodules=true -DnoDeploy=true -DupdateDependencies=true -DreleaseVersion=1.0.0 -DdevelopmentVersion=1.1.0-SNAPSHOT
 git push
 # new develop version is build on CI server
-git checkout master
+git checkout main
 git push
 # RELEASE version is build on CI server
 git push --tags
