@@ -1,7 +1,7 @@
 quarkus.analytics.timeout=3000
 quarkus.application.name=makspos
 quarkus.application.ui-header={applicationName} (powered by Quarkus)
-quarkus.application.version=1.0.0
+quarkus.application.version=1.1.0-SNAPSHOT
 quarkus.arc.auto-inject-fields=true
 quarkus.arc.auto-producer-methods=true
 quarkus.arc.context-propagation.enabled=true
@@ -157,7 +157,7 @@ quarkus.package.runner-suffix=-runner
 quarkus.package.write-transformed-bytecode-to-build-output=false
 quarkus.platform.artifact-id=quarkus-bom
 quarkus.platform.group-id=io.quarkus.platform
-quarkus.platform.version=3.13.0
+quarkus.platform.version=3.13.2
 quarkus.quinoa.build-dir=dist
 quarkus.quinoa.dev-server=true
 quarkus.quinoa.dev-server.check-path=/
