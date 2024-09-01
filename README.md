@@ -1,8 +1,8 @@
 # MaKsPOS
 
-## READMEs
-- [Quarkus README](./README_quarkus.md)
-- [Vue README](./src/main/webui/README_vue.md)
+Simple Point of Sales system 
+
+# Development
 
 ## Release Build
 
@@ -19,6 +19,30 @@ git push
 # RELEASE version is build on CI server
 git push --tags
 ```
+
+# Notes - TO BE DELETED / MIGRATED
+
+## Publish as Open Source
+### TODOs
+
+- [x] Rename project
+     - MaKsPOS
+     - MaksPOS
+     - Ma[ks]POS
+- [ ] Add Badges 
+     - from https://shields.io/
+### Infos
+- [Open Source Guide](https://opensource.guide/starting-a-project/)
+- [Linux Foundation](https://www.linuxfoundation.org/blog/hosting-open-source-projects-on-github-nine-things-you-need-to-know#:~:text=GitHub%20is%20an%20excellent%20platform,developers%20to%20adopt%20and%20contribute.)
+- [Github Docs](https://docs.github.com/de)
+- [Free Code Camp](https://www.freecodecamp.org/news/how-to-start-an-open-source-project-on-github-tips-from-building-my-trending-repo/)
+- [Github: Your First OpenSource Project](https://github.com/Your-First-Open-Source-Project/start-here)
+- [Github project: Open Source Handbook](https://github.com/shainakrumme/open-source-handbook)
+- [Egghead Course](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+
+## READMEs
+- [Quarkus README](./README_quarkus.md)
+- [Vue README](./README_vue.md)
 
 ## Backlog
 ### Todos
@@ -38,21 +62,3 @@ git push --tags
      1. Order View for Customer to create a Cart
      2. Create QR with direct link to the Cart
      3. Scan functionality for the cassier (Mobile out of box)
-
-## Publish as Open Source
-### TODOs
-
-- [x] Rename project
-     - MaKsPOS
-     - MaksPOS
-     - Ma[ks]POS
-- [ ] Add Badges 
-     - from https://shields.io/
-### Infos
-- [Open Source Guide](https://opensource.guide/starting-a-project/)
-- [Linux Foundation](https://www.linuxfoundation.org/blog/hosting-open-source-projects-on-github-nine-things-you-need-to-know#:~:text=GitHub%20is%20an%20excellent%20platform,developers%20to%20adopt%20and%20contribute.)
-- [Github Docs](https://docs.github.com/de)
-- [Free Code Camp](https://www.freecodecamp.org/news/how-to-start-an-open-source-project-on-github-tips-from-building-my-trending-repo/)
-- [Github: Your First OpenSource Project](https://github.com/Your-First-Open-Source-Project/start-here)
-- [Github project: Open Source Handbook](https://github.com/shainakrumme/open-source-handbook)
-- [Egghead Course](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
