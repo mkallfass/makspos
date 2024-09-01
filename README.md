@@ -1,6 +1,7 @@
 # MaKsPOS
 
-Simple Point of Sales system 
+Simple Point of Sales system for clubs, street festivals and events that do not require a professional POS system.
+Inventory management, electronic payment or tax functions are not currently implemented.
 
 # Development
 
@@ -36,11 +37,13 @@ git push --tags
 ### TODOs
 
 - [ ] Finalize README
+     - [ ] Add Screenshots
      - [ ] Merge READMEs
      - [ ] Add description
      - [ ] German README?
 - [ ] Remove private resources from project/POM
 - [ ] Remove renovate
+- [ ] Adjust demo data
 - [ ] Remove Jenkinsfile
 - [ ] Add github actions
 - [ ] Add Backlog to github project
