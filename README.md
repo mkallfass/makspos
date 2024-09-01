@@ -25,12 +25,18 @@ git push --tags
 ## Publish as Open Source
 ### TODOs
 
-- [x] Rename project
-     - MaKsPOS
-     - MaksPOS
-     - Ma[ks]POS
+- [ ] Finalize README
+     - [ ] Merge READMEs
+     - [ ] Add description
+     - [ ] German README?
+- [ ] Remove private resources from project/POM
+- [ ] Remove renovate
+- [ ] Remove Jenkinsfile
+- [ ] Add github actions
+- [ ] Add Backlog to github project
 - [ ] Add Badges 
      - from https://shields.io/
+
 ### Infos
 - [Open Source Guide](https://opensource.guide/starting-a-project/)
 - [Linux Foundation](https://www.linuxfoundation.org/blog/hosting-open-source-projects-on-github-nine-things-you-need-to-know#:~:text=GitHub%20is%20an%20excellent%20platform,developers%20to%20adopt%20and%20contribute.)
@@ -45,18 +51,16 @@ git push --tags
 - [Vue README](./README_vue.md)
 
 ## Backlog
-### Todos
+### [ ] Todos
 
-- [x] Config REST service (including labels)
+- [ ] Change I18n for native build
 - [ ] Security / Login
      - [Quarkus Security Getting Tutorial](https://quarkus.io/guides/security-getting-started-tutorial)
      - [Quarkus JWT Security Quickstart Project](https://github.com/quarkusio/quarkus-quickstarts/tree/main/security-jwt-quickstart)
      - [Quarkus Security Properties Guide](https://quarkus.io/guides/security-properties)
-- [x] Update to Kotlin 2.0
 
-### Features
+### [ ] Features
 
-- [x] Order Statistics
 - [ ] Read-Only-View to show customer the actual state of the order in a separate browser
 - [ ] Pre Order / Cart functionality
      1. Order View for Customer to create a Cart
