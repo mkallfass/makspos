@@ -41,7 +41,7 @@ git push --tags
      - [ ] Merge READMEs
      - [ ] Add description
      - [ ] German README?
-- [ ] Remove private resources from project/POM
+- [x] Remove private resources from project/POM
 - [x] Remove renovate
 - [ ] Adjust demo data
 - [ ] Remove Jenkinsfile
