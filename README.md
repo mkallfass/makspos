@@ -42,7 +42,7 @@ git push --tags
      - [ ] Add description
      - [ ] German README?
 - [ ] Remove private resources from project/POM
-- [ ] Remove renovate
+- [x] Remove renovate
 - [ ] Adjust demo data
 - [ ] Remove Jenkinsfile
 - [ ] Add github actions
