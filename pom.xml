@@ -141,6 +141,7 @@
                             <goal>build</goal>
                             <goal>generate-code</goal>
                             <goal>generate-code-tests</goal>
+                            <goal>native-image-agent</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -212,7 +213,7 @@
                 </dependencies>
                 <configuration>
                     <javaParameters>true</javaParameters>
-                    <jvmTarget>21</jvmTarget>
+                    <jvmTarget>${maven.compiler.release}</jvmTarget>
                     <compilerPlugins>
                         <plugin>all-open</plugin>
                     </compilerPlugins>
