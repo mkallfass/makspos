@@ -4,6 +4,16 @@ Simple Point of Sales system
 
 # Development
 
+## Running the application in dev mode for live coding
+
+```shell script
+./mvnw compile quarkus:dev
+```
+
+- [MaksPOS UI](http://localhost:8080)
+- [Quarkus Dev UI](http://localhost:8080/q/dev/)
+
+
 ## Release Build
 
 ```shell script
