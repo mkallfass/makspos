@@ -67,6 +67,7 @@ See: [Quarkus configuration guide](https://quarkus.io/guides/config)
 ./mvnw compile quarkus:dev
 ```
 
+Open on localhost
 - [MaksPOS UI](http://localhost:8080)
 - [Quarkus Dev UI](http://localhost:8080/q/dev/)
 - [REST API (SwaggerUI)](http://localhost:8080/q/swagger-ui/)
