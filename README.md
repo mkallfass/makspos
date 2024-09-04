@@ -123,7 +123,7 @@ You can then execute your native executable with: `./target/makspos-*-runner`
 - [x] Remove private resources from project/POM
 - [x] Remove renovate
 - [ ] Adjust demo data
-- [ ] Remove Jenkinsfile
+- [x] Remove Jenkinsfile
 - [ ] Add github actions
 - [ ] Add github distribution management to project POM
 - [ ] Add Backlog to github project
