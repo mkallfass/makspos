@@ -13,7 +13,7 @@ Inventory management, electronic payment or tax functions are currently not impl
   - [PrimeVue](https://primevue.org/)
   - [TailwindCSS](https://tailwindcss.com/)
 
-# Setup from Source
+# Setup from source
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Inventory management, electronic payment or tax functions are currently not impl
 ```shell script
 ./mvnw package
 ```
-## Run Application
+## Run application
 
 ```shell script
 java -jar target/quarkus-app/quarkus-run.jar
@@ -58,6 +58,9 @@ The Quarkus [application.properties](./src/main/resources/application.properties
 
 See: [Quarkus configuration guide](https://quarkus.io/guides/config)
 
+## Order data
+
+The orders are stored in the [JSON Lines](https://jsonlines.org) file `<data>/orders.jsonl`.
 
 # Development
 
@@ -73,7 +76,7 @@ Open on localhost
 - [REST API (SwaggerUI)](http://localhost:8080/q/swagger-ui/)
 
 
-## Release Build
+## Build release
 
 ```shell script
 mvn external.atlassian.jgitflow:jgitflow-maven-plugin:1.0-m5.1:release-start -DautoVersionSubmodules=true -DupdateDependencies=true -DreleaseVersion=1.0.0 -DdevelopmentVersion=1.1.0-SNAPSHOT
@@ -103,12 +106,14 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 
 You can then execute your native executable with: `./target/makspos-*-runner`
 
-## Quarkus Guides
+## Quarkus guides
 
 - [Kotlin](https://quarkus.io/guides/kotlin)
 - [REST](https://quarkus.io/guides/rest)
 - [OpenAPI/SwaggerUI](https://quarkus.io/guides/openapi-swaggerui)
 - [Quinoa/Frontend](https://docs.quarkiverse.io/quarkus-quinoa/dev/index.html)
+
+## Frontend development
 
 # Notes - TO BE DELETED / MIGRATED
 
