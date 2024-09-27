@@ -10,7 +10,7 @@ Content-Type: application/json
       "quantity": 12
     },
     {
-      "id": "1009",
+      "id": "1004",
       "quantity": 3.5
     }
   ]
@@ -25,15 +25,15 @@ Content-Type: application/json
   "lineitems": [
     {
       "id": "1001",
-      "name": "Steak",
-      "description": "mit Brötchen",
+      "name": "DUMMY 01",
+      "description": "DUMMY 01 description",
       "quantity": 5,
       "price": 5
     },
     {
-      "id": "2010",
-      "name": "Topinambur",
-      "description": "2cl",
+      "id": "2001",
+      "name": "DUMMY 02",
+      "description": "DUMMY 01 description",
       "quantity": 3.5,
       "price": 1.5
     }
