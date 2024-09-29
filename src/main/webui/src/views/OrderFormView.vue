@@ -14,8 +14,8 @@
 </template>
 
 <script lang="ts" setup>
-import ProductList from "@/components/ProductList.vue";
-import CartDisplay from "@/components/CartDisplay.vue";
-import PaymentDisplay from "@/components/PaymentDisplay.vue";
-import OrderDisplay from "@/components/OrderDisplay.vue";
+import ProductList from '@/components/ProductList.vue'
+import CartDisplay from '@/components/CartDisplay.vue'
+import PaymentDisplay from '@/components/PaymentDisplay.vue'
+import OrderDisplay from '@/components/OrderDisplay.vue'
 </script>

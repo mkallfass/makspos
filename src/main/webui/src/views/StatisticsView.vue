@@ -9,5 +9,5 @@
 </template>
 
 <script lang="ts" setup>
-import StatisticsDisplay from "@/components/StatisticsDisplay.vue";
+import StatisticsDisplay from '@/components/StatisticsDisplay.vue'
 </script>
