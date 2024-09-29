@@ -159,8 +159,8 @@ npm run format
 
 - [ ] Finalize README
      - [ ] Add Screenshots
-     - [ ] Merge READMEs
-     - [ ] Add description
+     - [x] Merge READMEs
+     - [x] Add description
      - [ ] German README?
 - [x] Remove private resources from project/POM
 - [x] Remove renovate
