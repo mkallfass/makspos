@@ -9,6 +9,7 @@ Inventory management, electronic payment or tax functions are currently not impl
   - [Kotlin](https://kotlinlang.org/)
   - [Quarkus](https://quarkus.io/)
 - Frontend
+  - [TypeScript](https://www.typescriptlang.org/)
   - [Vue](https://vuejs.org/)
   - [PrimeVue](https://primevue.org/)
   - [TailwindCSS](https://tailwindcss.com/)
@@ -115,6 +116,42 @@ You can then execute your native executable with: `./target/makspos-*-runner`
 
 ## Frontend development
 
+The sources of the frontend are located in `src/main/webui`. The fronted is automatically build with [Quinoa](https://docs.quarkiverse.io/quarkus-quinoa/dev/index.html)
+
+### Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+### Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
+
+### Format sources with [prettier](https://prettier.io/)
+
+```sh
+npm run format
+```
+
 # Notes - TO BE DELETED / MIGRATED
 
 ## Publish as Open Source
@@ -127,7 +164,7 @@ You can then execute your native executable with: `./target/makspos-*-runner`
      - [ ] German README?
 - [x] Remove private resources from project/POM
 - [x] Remove renovate
-- [ ] Adjust demo data
+- [x] Adjust demo data
 - [x] Remove Jenkinsfile
 - [ ] Add github actions
 - [ ] Add github distribution management to project POM
