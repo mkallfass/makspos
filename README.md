@@ -167,7 +167,7 @@ npm run format
 ### TODOs
 
 - [ ] Finalize README
-     - [ ] Add Screenshots
+     - [x] Add Screenshots
      - [x] Merge READMEs
      - [x] Add description
      - [ ] German README?
