@@ -3,13 +3,15 @@
 Simple Point of Sales system for clubs, street festivals and events that do not require a professional POS system.
 Inventory management, electronic payment or tax functions are currently not implemented.
 
-<img src="docs/assets/makspos-order_entry.png" title="MaKs POS - Order Entry" width="75%" style="text-align:center, border:2px solid" />
+<figure>
+  <img src="docs/assets/makspos-order_entry.png" title="MaKs POS - Order Entry" width="75%" style="text-align: center; border: 2px solid" />
+  <figcaption>Order Entry</figcaption>
+</figure>
 
-**MaKs POS - Order Entry**
-
-<img src="docs/assets/makspos-order_statistics.png" title="MaKs POS - Order Statistic" width="75%" style="text-align:center, border:2px solid" />
-
-**MaKs POS - Order Statistic**
+<figure>
+  <img src="docs/assets/makspos-order_statistics.png" title="MaKs POS - Order Statistic" width="75%" style="text-align: center; border: 2px solid" />
+  <figcaption>Order Statistics</figcaption>
+</figure>
 
 ## Technology stack
 - Backend
