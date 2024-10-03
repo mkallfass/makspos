@@ -1,12 +1,11 @@
-# MaKsPOS
-
-![Maks POS - Order Entry](docs/assets/makspos-order_entry.png)
-
-![Maks POS - Order Statistics](docs/assets/makspos-order_statistics.png)
+# MaKs POS
 
 Simple Point of Sales system for clubs, street festivals and events that do not require a professional POS system.
-
 Inventory management, electronic payment or tax functions are currently not implemented.
+
+![MaKs POS - Order Entry](docs/assets/makspos-order_entry.png)
+
+![MaKs POS - Order Statistics](docs/assets/makspos-order_statistics.png)
 
 ## Technology stack
 - Backend
@@ -33,7 +32,7 @@ Inventory management, electronic payment or tax functions are currently not impl
 ```shell script
 java -jar target/quarkus-app/quarkus-run.jar
 ```
-Open [MaksPOS UI](http://localhost:8080) ([http://localhost:8080](http://localhost:8080))
+Open [MaKs POS UI](http://localhost:8080) ([http://localhost:8080](http://localhost:8080))
 
 ## Configuration
 
@@ -76,7 +75,7 @@ The orders are stored in the [JSON Lines](https://jsonlines.org) file `<data>/or
 ```
 
 Open on localhost
-- [MaksPOS UI](http://localhost:8080)
+- [MaKs POS UI](http://localhost:8080)
 - [Quarkus Dev UI](http://localhost:8080/q/dev/)
 - [REST API (SwaggerUI)](http://localhost:8080/q/swagger-ui/)
 
