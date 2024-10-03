@@ -1,5 +1,9 @@
 # MaKsPOS
 
+![Maks POS - Order Entry](docs/assets/makspos-order_entry.png)
+
+![Maks POS - Order Statistics](docs/assets/makspos-order_statistics.png)
+
 Simple Point of Sales system for clubs, street festivals and events that do not require a professional POS system.
 
 Inventory management, electronic payment or tax functions are currently not implemented.
