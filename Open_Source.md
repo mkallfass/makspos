@@ -1,6 +1,7 @@
 # Publish as Open Source
 ## TODOs
 
+- [x] Set version to 0.1.0-SNAPSHOT
 - [ ] Finalize README
      - [x] Add Screenshots
      - [x] Merge READMEs
