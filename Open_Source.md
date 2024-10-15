@@ -11,9 +11,9 @@
 - [x] Remove renovate
 - [x] Adjust demo data
 - [x] Remove Jenkinsfile
+- [x] Adjust package.json: Remove de.mkallfass
 - [ ] Adjust application.properties
 - [ ] Adjust docker files: Remove docker-registry.mkallfass.de
-- [ ] Adjust package.json: de.mkallfass
 - [ ] Add github actions
 - [ ] Add github distribution management to project POM
 - [ ] Add Backlog to github project
