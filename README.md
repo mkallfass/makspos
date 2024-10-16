@@ -1,3 +1,7 @@
+![GitHub License](https://img.shields.io/github/license/mkallfass/makspos)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/mkallfass/makspos/.github%2Fworkflows%2Fmaven-build.yml)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/mkallfass/makspos)
+
 # MaKs POS
 
 Simple Point of Sales system for clubs, street festivals and events that do not require a professional POS system.
