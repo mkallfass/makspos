@@ -1,0 +1,46 @@
+### Create minimum order
+POST {{base_url}}/api/orders
+Accept: application/json
+Content-Type: application/json
+
+{
+  "lineitems": [
+    {
+      "id": "1001",
+      "quantity": 12
+    },
+    {
+      "id": "1004",
+      "quantity": 3.5
+    }
+  ]
+}
+
+### Create order
+POST {{base_url}}/api/orders
+Accept: application/json
+Content-Type: application/json
+
+{
+  "lineitems": [
+    {
+      "id": "1001",
+      "name": "DUMMY 01",
+      "description": "DUMMY 01 description",
+      "quantity": 5,
+      "price": 5
+    },
+    {
+      "id": "2001",
+      "name": "DUMMY 02",
+      "description": "DUMMY 01 description",
+      "quantity": 3.5,
+      "price": 1.5
+    }
+  ]
+}
+
+### Get order statistics
+GET {{base_url}}/api/orders/statistics
+Accept: application/json
+Content-Type: application/json

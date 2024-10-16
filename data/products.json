@@ -1,0 +1,14 @@
+[
+  { "id": "1001", "name": "Hot Dog", "description": "", "price": 4 },
+  { "id": "1002", "name": "Hamburger", "description": "", "price": 5.0 },
+  { "id": "1003", "name": "Schnitzel", "description": "in Roll", "price": 6.5 },
+  { "id": "1004", "name": "Pizza", "description": "Piece", "price": 3.50 },
+  { "id": "1005", "name": "Cheese Cake", "description": "Piece", "price": 3.50 },
+  { "id": "2001", "name": "Beer", "description": "0,4l", "price": 3.5 },
+  { "id": "2002", "name": "White wine", "description": "0,25l", "price": 3.5 },
+  { "id": "2003", "name": "Red wine", "description": "0,25l", "price": 3.5 },
+  { "id": "2004", "name": "Coca Cola", "description": "0,33l Bottle", "price": 2.5 },
+  { "id": "2005", "name": "Fanta", "description": "0,33l Bottle", "price": 2.5 },
+  { "id": "2006", "name": "Water", "description": "0,5l Bottle", "price": 2 },
+  { "id": "2007", "name": "Coffee", "description": "Cup", "price": 1.5 }
+]
