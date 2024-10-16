@@ -12,10 +12,10 @@
 - [x] Adjust demo data
 - [x] Remove Jenkinsfile
 - [x] Adjust package.json: Remove de.mkallfass
-- [ ] Adjust application.properties
-- [ ] Adjust docker files: Remove docker-registry.mkallfass.de
-- [ ] Add github actions
-- [ ] Add github distribution management to project POM
+- [x] Adjust application.properties
+- [x] Adjust docker files: Remove docker-registry.mkallfass.de
+- [x] Add github actions
+- [x] Add github distribution management to project POM
 - [ ] Add Backlog to github project
 - [ ] Add Badges 
      - from https://shields.io/
