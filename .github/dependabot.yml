@@ -8,7 +8,11 @@ updates:
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/src/main/webui"
+    schedule:
+      interval: "daily"
   - package-ecosystem: "docker"
     directory: "/src/main/docker"
     schedule:
