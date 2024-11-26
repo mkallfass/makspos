@@ -1,7 +1,9 @@
 <template>
   <Card>
     <template #title>
-      <div class="bg-surface-50 dark:bg-surface-950">{{ getLabel('cart.title') }}</div>
+      <div class="bg-surface-50 dark:bg-surface-950 font-bold text-xl">
+        {{ getLabel('cart.title') }}
+      </div>
     </template>
     <template #content>
       <DataTable :value="cartLineItems" showGridlines stripedRows>
