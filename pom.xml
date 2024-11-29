@@ -24,7 +24,7 @@
         <surefire-plugin.version>3.5.2</surefire-plugin.version>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.17.0</quarkus.platform.version>
+        <quarkus.platform.version>3.17.2</quarkus.platform.version>
         <quarkiverse.quinoa.version>2.5.0</quarkiverse.quinoa.version>
         <jackson.version>2.18.2</jackson.version>
         <skipITs>true</skipITs>
