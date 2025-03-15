@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import VueDevTools from "vite-plugin-vue-devtools";
@@ -11,6 +12,7 @@ export default defineConfig({
     target: "esnext" //browsers can handle the latest ES features
   },
   plugins: [
+    tailwindcss(),
     vue(),
     vueJsx(),
     VueDevTools(),
