@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.15.0",
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.1",
     "@tsconfig/node20": "^20.1.9",
     "@types/jsdom": "^27.0.0",
     "@types/node": "^25.3.0",
