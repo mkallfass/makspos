@@ -31,7 +31,7 @@
     "@tsconfig/node20": "^20.1.9",
     "@types/jsdom": "^28.0.0",
     "@types/node": "^25.5.0",
-    "@vitejs/plugin-vue": "^6.0.4",
+    "@vitejs/plugin-vue": "^6.0.5",
     "@vitejs/plugin-vue-jsx": "^5.1.4",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^13.0.0",
