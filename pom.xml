@@ -27,7 +27,7 @@
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
         <quarkus.platform.version>3.34.1</quarkus.platform.version>
         <quarkiverse.quinoa.version>2.7.2</quarkiverse.quinoa.version>
-        <jackson.version>2.21.1</jackson.version>
+        <jackson.version>2.21.2</jackson.version>
         <skipITs>true</skipITs>
     </properties>
 
