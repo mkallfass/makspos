@@ -1,0 +1,7 @@
+# Normalize line endings repo-wide. Unix wrappers (mvnw) and shell scripts
+# stay LF so they are executable on Linux CI agents; Windows batch and
+# PowerShell scripts keep CRLF.
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
