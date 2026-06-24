@@ -14,7 +14,7 @@
 # docker run -i --rm -p 8080:8080 ghcr.io/mkallfass/makspos
 #
 ###
-FROM registry.access.redhat.com/ubi10/ubi-minimal:1782191807
+FROM registry.access.redhat.com/ubi10/ubi-minimal:1782283191
 WORKDIR /work/
 RUN chown 1001 /work \
     && chmod "g+rwX" /work \
