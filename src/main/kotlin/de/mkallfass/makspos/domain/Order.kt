@@ -23,8 +23,7 @@ data class Order(
     @Schema(name = "lineitems", description = "The lineitems of the order")
     @Valid
     @NotEmpty
-    @field:JsonProperty("lineitems")
-    var lineItems: List<LineItem>,
+    var lineitems: List<LineItem>,
 
     @Schema(name = "total", description = "The total price of the order")
     @field:JsonProperty("total")
