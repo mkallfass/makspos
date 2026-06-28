@@ -94,7 +94,7 @@ OpenAPI UI is available at `/q/swagger-ui` in dev mode.
 ### Domain Model
 
 - **`Product`** — id, name, description, price (extends `BaseProduct`)
-- **`Order`** — id, date, lineItems, total; requires non-empty `lineItems`
+- **`Order`** — id, date, lineitems, total; requires non-empty `lineitems`
 - **`LineItem`** — references a product with quantity
 - **`Config`** — currency, paymentPresets, labels (UI strings)
 - **`OrderStatistics`** / **`ProductStatistics`** — aggregated reporting data

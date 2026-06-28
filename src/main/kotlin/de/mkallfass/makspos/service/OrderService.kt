@@ -51,7 +51,7 @@ class OrderService {
         order.date = ZonedDateTime.now()
 
         var orderTotal = 0.0
-        for (i in order.lineItems) {
+        for (i in order.lineitems) {
             val p = productService.getProductById(i.id)
             if (p != null) {
                 if (i.name != null && i.name != p.name) {
@@ -80,7 +80,7 @@ class OrderService {
     }
 
     private fun calculateProductStatistics(order: Order, productStatistics: ArrayList<ProductStatistics>) {
-        for (lineitem in order.lineItems) {
+        for (lineitem in order.lineitems) {
             var statistics = productStatistics.find { it.id == lineitem.id }
             if (statistics == null) {
                 // Try to create statistics from product repository

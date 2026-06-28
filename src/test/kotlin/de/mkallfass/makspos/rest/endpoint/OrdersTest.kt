@@ -12,14 +12,14 @@ import org.junit.jupiter.api.Test
 class OrdersTest {
     @Test
     fun testOrdersEndpoint() {
-        val lineItems = listOf(
+        val lineitems = listOf(
             LineItem(id = "TEST-01", quantity = 4.5),
             LineItem(id = "TEST-02", quantity = 4.5)
         )
         // @formatter:off
         given()
             .contentType(ContentType.JSON)
-            .body(Order(lineItems = lineItems))
+            .body(Order(lineitems = lineitems))
         .`when`()
             .post("/api/orders")
         .then()
