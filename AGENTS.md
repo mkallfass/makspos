@@ -58,6 +58,10 @@ MaKs Point of Sale (MaKsPOS) is a lightweight, file-based POS system built with 
 # Run integration tests (requires running instance)
 ./mvnw verify -DskipITs=false
 
+# Run frontend unit tests (from src/main/webui)
+npm run test:unit          # single run, as used in CI
+npm run test:unit:watch    # interactive watch mode
+
 # Build
 ./mvnw clean package
 
@@ -117,6 +121,10 @@ Located in `src/main/webui/`. When running `./mvnw quarkus:dev`, the frontend is
 - **Integration tests** (`*IT.kt`): Use `@QuarkusIntegrationTest`, run against the packaged application.
 - **HTTP test files**: `src/test/requests/` contains `.http` files for manual API testing.
 - Integration tests are skipped by default (`skipITs=true`); enable with `-DskipITs=false`.
+- **Frontend unit tests** (Vitest + jsdom): specs live in `src/main/webui/src/**/__tests__/*.spec.ts`,
+  shared fixtures in `src/__tests__/fixtures.ts`. They run in their own `webui-tests` CI job —
+  Quinoa builds the frontend during the Maven build but does not run its tests.
+- **Frontend E2E tests** (Cypress): `src/main/webui/cypress/`, run with `npm run test:e2e`.
 
 ## Code Conventions
 

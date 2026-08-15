@@ -3,8 +3,31 @@ name: maven build
 on: [push]
 
 jobs:
+  webui-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: src/main/webui
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: src/main/webui/package-lock.json
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Run frontend unit tests
+        run: npm run test:unit
+
   build:
     runs-on: ubuntu-latest
+    # Quinoa builds the frontend but never runs its tests, so gate the deploy on them
+    needs: webui-tests
     permissions:
       contents: read
       packages: write
