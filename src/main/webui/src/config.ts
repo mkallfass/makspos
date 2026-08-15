@@ -33,7 +33,7 @@ export const getConfig = () => {
     console.error('Error getting config from session storage')
     return {} as Config
   }
-  return jsonToConfig(sessionStorage.getItem('config')!!)
+  return jsonToConfig(sessionStorage.getItem('config')!)
 }
 
 function jsonToConfig(json: string): Config {

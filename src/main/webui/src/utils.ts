@@ -8,7 +8,7 @@ export const getLabel = (key: string) => {
   return 'KEY ' + key + ' NOT AVAILABLE'
 }
 
-export const formatCurrency = (value: any) => {
+export const formatCurrency = (value: number) => {
   return value.toLocaleString(navigator.language, {
     style: 'currency',
     currency: getConfig().currency

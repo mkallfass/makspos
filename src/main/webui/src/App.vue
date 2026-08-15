@@ -54,7 +54,7 @@ const items = [
   }
 ]
 
-const toggle = (event: any) => {
+const toggle = (event: MouseEvent) => {
   menu.value.toggle(event)
 }
 </script>
