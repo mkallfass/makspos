@@ -13,6 +13,18 @@ updates:
     directory: "/src/main/webui"
     schedule:
       interval: "daily"
+    ignore:
+      # PrimeTek relicensed the PrimeUI packages away from MIT with these majors:
+      # they require a PrimeUI license key and otherwise render an
+      # "Invalid PrimeUI License" banner on every page. This project is MIT, so
+      # stay on the last MIT releases (primevue 4.5.5, @primeuix/themes 2.0.3,
+      # primeicons 7.0.0) until that is deliberately decided otherwise.
+      - dependency-name: "primevue"
+        versions: [">=5"]
+      - dependency-name: "@primeuix/themes"
+        versions: [">=3"]
+      - dependency-name: "primeicons"
+        versions: [">=8"]
   - package-ecosystem: "docker"
     directory: "/src/main/docker"
     schedule:
