@@ -36,7 +36,7 @@ export const getConfig = () => {
   return jsonToConfig(sessionStorage.getItem('config')!)
 }
 
-function jsonToConfig(json: string): Config {
+export function jsonToConfig(json: string): Config {
   const obj = JSON.parse(json)
   // console.debug("labels: " + JSON.stringify(Object.entries(obj.labels)))
   const configLabels = new Map<string, string>()
