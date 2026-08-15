@@ -25,15 +25,14 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(ToastService)
+// No `cssLayer` here on purpose. The block that used to sit at this level was never read —
+// PrimeVue expects it under `theme.options`, so the app has always run with PrimeVue's CSS
+// unlayered. That is also the setup we want: Tailwind 4 emits its preflight into its own `base`
+// layer, which is not part of a `tailwind-base, primevue, tailwind-utilities` ordering and would
+// therefore win over a layered `primevue`, leaving buttons and cards unstyled.
 app.use(PrimeVue, {
   theme: {
     preset: Aura
-  },
-  options: {
-    cssLayer: {
-      name: 'primevue',
-      order: 'tailwind-base, primevue, tailwind-utilities'
-    }
   },
   ripple: true
 })
