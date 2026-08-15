@@ -38,6 +38,10 @@ app.use(PrimeVue, {
   ripple: true
 })
 
+// PrimeVue components are registered under their canonical vendor names. These are
+// single-word and partly reserved HTML names by design; renaming them here would break
+// every template that uses them, so both naming rules are switched off for this block.
+/* eslint-disable vue/multi-word-component-names, vue/no-reserved-component-names */
 app.component('Toast', Toast)
 app.component('Toolbar', Toolbar)
 app.component('Button', Button)
@@ -46,5 +50,6 @@ app.component('Card', Card)
 app.component('DataTable', DataTable)
 app.component('Column', Column)
 app.component('InputNumber', InputNumber)
+/* eslint-enable vue/multi-word-component-names, vue/no-reserved-component-names */
 
 app.mount('#app')
