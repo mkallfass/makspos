@@ -23,10 +23,10 @@
               showButtons
               @input="quantityChanged(slotProps.data)"
             >
-              <template #incrementbuttonicon>
+              <template #incrementicon>
                 <span class="pi pi-plus" />
               </template>
-              <template #decrementbuttonicon>
+              <template #decrementicon>
                 <span class="pi pi-minus" />
               </template>
             </InputNumber>
