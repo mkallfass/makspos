@@ -18,7 +18,8 @@
   },
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
-    "pinia": "^3.0.4",
+    "@vue/devtools-api": "^8.2.1",
+    "pinia": "^4.0.3",
     "primeflex": "^4.0.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.5",
