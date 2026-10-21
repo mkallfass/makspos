@@ -50,9 +50,9 @@
     "start-server-and-test": "^3.0.12",
     "tailwindcss": "^4.1.18",
     "typescript": "~6.0.3",
-    "vite": "^8.2.1",
+    "vite": "^8.3.5",
     "vite-plugin-vue-devtools": "^8.2.1",
-    "vitest": "^5.0.0",
+    "vitest": "^5.0.5",
     "vue-tsc": "^3.3.9"
   }
 }
