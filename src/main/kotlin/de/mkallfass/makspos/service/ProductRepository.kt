@@ -1,13 +1,11 @@
 package de.mkallfass.makspos.service
 
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
-import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import de.mkallfass.makspos.domain.Product
 import io.quarkus.logging.Log
 import jakarta.enterprise.context.ApplicationScoped
 import org.eclipse.microprofile.config.inject.ConfigProperty
+import tools.jackson.core.type.TypeReference
+import tools.jackson.module.kotlin.jacksonObjectMapper
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -15,7 +13,7 @@ import java.nio.file.Paths
 @ApplicationScoped
 class ProductRepository {
 
-    val mapper = ObjectMapper().registerKotlinModule().registerModule(JavaTimeModule())
+    val mapper = jacksonObjectMapper()
 
     @ConfigProperty(name = "data.directory")
     lateinit var dataDirectory: String

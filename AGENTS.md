@@ -12,11 +12,11 @@ MaKs Point of Sale (MaKsPOS) is a lightweight, file-based POS system built with 
 
 | Layer | Technology |
 |---|---|
-| Language | Kotlin 2.3.10 |
-| Framework | Quarkus 3.32.2 |
+| Language | Kotlin 2.4.20 |
+| Framework | Quarkus 4.0.1 |
 | Java target | Java 25 |
-| Frontend | Vue.js (via Quarkus Quinoa 2.7.2) |
-| REST | Quarkus REST (RESTEasy Reactive) + Jackson |
+| Frontend | Vue.js (via Quarkus Quinoa 4.0.0) |
+| REST | Quarkus REST (RESTEasy Reactive) + Jackson 3 (`tools.jackson`) |
 | Validation | Hibernate Validator (Jakarta Validation) |
 | OpenAPI | SmallRye OpenAPI |
 | Health | SmallRye Health |
@@ -81,6 +81,10 @@ There is **no database**. All persistence is done through JSON files on disk:
 - `ProductRepository` reads products from a JSON file configured via `data.directory` + `product.repository` properties.
 - `OrderRepository` and `ConfigRepository` follow the same pattern.
 - The data directory is created automatically if it does not exist.
+- The repositories use their own Jackson mapper (`jacksonObjectMapper()`, Jackson 3). Since the
+  Jackson 3 upgrade the order `date` is written as an ISO-8601 string; lines written before that
+  carry a numeric epoch value. `orders.jsonl` is append-only, so both forms occur in one file and
+  both stay readable — `OrderRepositoryMapperTest` pins that.
 
 ### REST API
 
