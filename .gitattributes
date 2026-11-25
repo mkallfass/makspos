@@ -3,5 +3,8 @@
 # PowerShell scripts keep CRLF.
 * text=auto eol=lf
 *.cmd text eol=crlf
+# Dependabot rewrites mvnw.cmd with CRLF bytes; store it verbatim so its
+# Maven wrapper bumps don't leave a phantom diff on every checkout.
+mvnw.cmd -text
 *.bat text eol=crlf
 *.ps1 text eol=crlf
