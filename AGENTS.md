@@ -55,7 +55,7 @@ MaKs Point of Sale (MaKsPOS) is a lightweight, file-based POS system built with 
 # Run unit tests
 ./mvnw test
 
-# Run integration tests (requires running instance)
+# Run integration tests (packages the app and launches it)
 ./mvnw verify -DskipITs=false
 
 # Run frontend unit tests (from src/main/webui)
@@ -123,8 +123,15 @@ Located in `src/main/webui/`. When running `./mvnw quarkus:dev`, the frontend is
 
 - **Unit tests** (`*Test.kt`): Use `@QuarkusTest`, test individual endpoints in isolation.
 - **Integration tests** (`*IT.kt`): Use `@QuarkusIntegrationTest`, run against the packaged application.
+  They inherit their assertions from the matching `@QuarkusTest` class, so they need the same
+  fixtures. The packaged artifact runs in the `prod` profile, where `%test.data.directory` does not
+  apply — `ItDataDirectory` (a `QuarkusTestResourceLifecycleManager`) therefore copies
+  `src/test/resources/data` into a temp directory and hands its path to the launched process as
+  `-Ddata.directory=…`. Every `*IT.kt` needs `@WithTestResource(ItDataDirectory::class, scope =
+  MATCHING_RESOURCES)`; without it the tests run against the demo catalog in `data/` and fail.
 - **HTTP test files**: `src/test/requests/` contains `.http` files for manual API testing.
 - Integration tests are skipped by default (`skipITs=true`); enable with `-DskipITs=false`.
+  CI passes that flag, so the ITs do run on every push.
 - **Frontend unit tests** (Vitest + jsdom): specs live in `src/main/webui/src/**/__tests__/*.spec.ts`,
   shared fixtures in `src/__tests__/fixtures.ts`. They run in their own `webui-tests` CI job —
   Quinoa builds the frontend during the Maven build but does not run its tests.

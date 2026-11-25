@@ -46,7 +46,9 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      # -DskipITs=false: integration tests are off by default, so without this the packaged
+      # artifact would never be smoke-tested and IT regressions would go unnoticed
       - name: Build, deploy and push container image with Maven
-        run: ./mvnw --batch-mode --update-snapshots -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true deploy
+        run: ./mvnw --batch-mode --update-snapshots -DskipITs=false -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
