@@ -25,7 +25,8 @@ updates:
         versions: [">=3"]
       - dependency-name: "primeicons"
         versions: [">=8"]
-  - package-ecosystem: "docker"
-    directory: "/src/main/docker"
-    schedule:
-      interval: "weekly"
+  # No "docker" ecosystem on purpose: src/main/docker/Dockerfile.* is Quarkus
+  # scaffolding that nothing builds. The container image is produced by
+  # quarkus-container-image-jib (-Dquarkus.container-image.build=true in the
+  # maven-build workflow) from quarkus.jib.base-jvm-image in
+  # application.properties, so bumping those base images changes no artifact.
