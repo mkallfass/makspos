@@ -28,6 +28,10 @@
         <quarkus.platform.version>4.0.1</quarkus.platform.version>
         <quarkiverse.quinoa.version>4.0.0</quarkiverse.quinoa.version>
         <skipITs>true</skipITs>
+        <!-- Launch the integration tests against the artifact built on this machine. Without this,
+             a build that also creates the container image (CI does) would launch the application in
+             a container, where the fixture directory handed over by ItDataDirectory does not exist. -->
+        <integration-test-artifact-type>jar</integration-test-artifact-type>
     </properties>
 
     <dependencyManagement>
@@ -162,6 +166,7 @@
                         <native.image.path>${project.build.directory}/${project.build.finalName}-runner</native.image.path>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <maven.home>${maven.home}</maven.home>
+                        <quarkus.test.integration-test-artifact-type>${integration-test-artifact-type}</quarkus.test.integration-test-artifact-type>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -220,6 +225,10 @@
             <properties>
                 <skipITs>false</skipITs>
                 <quarkus.native.enabled>true</quarkus.native.enabled>
+                <!-- The native executable is written to target/ even when it is built inside the
+                     Mandrel builder image, so the integration tests run it directly instead of
+                     starting a native-container. -->
+                <integration-test-artifact-type>native</integration-test-artifact-type>
             </properties>
         </profile>
     </profiles>

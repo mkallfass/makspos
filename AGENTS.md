@@ -129,9 +129,19 @@ Located in `src/main/webui/`. When running `./mvnw quarkus:dev`, the frontend is
   `src/test/resources/data` into a temp directory and hands its path to the launched process as
   `-Ddata.directory=…`. Every `*IT.kt` needs `@WithTestResource(ItDataDirectory::class, scope =
   MATCHING_RESOURCES)`; without it the tests run against the demo catalog in `data/` and fail.
+  That temp directory lives on the machine running the build, so the application has to be launched
+  there too. `quarkus.test.integration-test-artifact-type` (a failsafe system property in `pom.xml`,
+  `jar` by default and `native` in the `native` profile) pins that. Without it, a build that also
+  creates the container image — `-Dquarkus.container-image.build=true`, which is how CI builds —
+  produces the artifact type `jar-container`, Quarkus starts the application in a container, and the
+  host path arrives there as an environment variable pointing at nothing: every endpoint that reads
+  a file answers 500.
 - **HTTP test files**: `src/test/requests/` contains `.http` files for manual API testing.
 - Integration tests are skipped by default (`skipITs=true`); enable with `-DskipITs=false`.
   CI passes that flag, so the ITs do run on every push.
+- **Container image**: because the ITs run against the jar, the image gets its own CI step after the
+  push — it starts the image, waits for `/q/health/ready` and checks that `/` serves the frontend.
+  It runs without a data directory, so it is a start-up check, not an API test.
 - **Frontend unit tests** (Vitest + jsdom): specs live in `src/main/webui/src/**/__tests__/*.spec.ts`,
   shared fixtures in `src/__tests__/fixtures.ts`. They run in their own `webui-tests` CI job —
   Quinoa builds the frontend during the Maven build but does not run its tests.

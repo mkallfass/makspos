@@ -16,6 +16,11 @@ import java.nio.file.StandardCopyOption
  * The map returned by [start] is passed to the launched process as system properties, so
  * `data.directory` wins over the value baked into `application.properties`. A fresh copy per class
  * also keeps the orders written by the tests out of the source tree.
+ *
+ * The directory lives on the machine that runs the tests, so the application has to be launched
+ * there as well. `quarkus.test.integration-test-artifact-type` in `pom.xml` pins that: without it,
+ * a build that also creates the container image would start the application inside a container,
+ * where the path exists only as an environment variable and the fixtures are nowhere to be found.
  */
 class ItDataDirectory : QuarkusTestResourceLifecycleManager {
 
