@@ -25,8 +25,9 @@ updates:
         versions: [">=3"]
       - dependency-name: "primeicons"
         versions: [">=8"]
-  # No "docker" ecosystem on purpose: src/main/docker/Dockerfile.* is Quarkus
-  # scaffolding that nothing builds. The container image is produced by
+  # No "docker" ecosystem on purpose: the src/main/docker scaffolding was
+  # removed because nothing built it. The container image is produced by
   # quarkus-container-image-jib (-Dquarkus.container-image.build=true in the
   # maven-build workflow) from quarkus.jib.base-jvm-image in
-  # application.properties, so bumping those base images changes no artifact.
+  # application.properties. Leaving the ecosystem out also guards against a
+  # later `quarkus create`/`quarkus update` re-adding those files unnoticed.
