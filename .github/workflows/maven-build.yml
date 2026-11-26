@@ -52,3 +52,15 @@ jobs:
         run: ./mvnw --batch-mode --update-snapshots -DskipITs=false -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # The integration tests launch the packaged jar on the runner (see pom.xml), so the image is
+      # smoke-tested separately: start it like a user would and wait for it to report ready
+      - name: Smoke-test the container image
+        run: |
+          image=$(sed -n 's/^metadata\.container-image=//p' target/quarkus-artifact.properties | tr -d '\\')
+          echo "Smoke-testing $image"
+          docker run --rm --detach --name makspos-smoke --publish 8080:8080 "$image"
+          trap 'status=$?; [ "$status" -eq 0 ] || docker logs makspos-smoke; docker stop makspos-smoke >/dev/null; exit "$status"' EXIT
+          curl --fail --silent --show-error --output /dev/null \
+            --retry 30 --retry-delay 2 --retry-connrefused --retry-all-errors \
+            http://localhost:8080/q/health/ready
+          curl --fail --silent --show-error --output /dev/null http://localhost:8080/
